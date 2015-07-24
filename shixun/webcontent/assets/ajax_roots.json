@@ -1,0 +1,15 @@
+[
+	{
+		"id": "menu_1",
+		"text": "菜单一",
+		"children": true
+	}, {
+		"id": "menu_2",
+		"text": "菜单二",
+		"children": true
+	}, {
+		"id": "menu_3",
+		"text": "菜单三",
+		"children": true
+	}
+]

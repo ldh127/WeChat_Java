@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			 //上报测速 --初始点
+			window._points = [+new Date()];
+			 //上报测速 --js加载完成点,通过编译工具加在seajs.use回调中
+			function wx_main(mod) {
+				window._points && (window._points[3] = +new Date());
+			};
+		</script>
+		<title>微信公众平台</title>
+		<link href="https://res.wx.qq.com/mpres/htmledition/images/favicon218877.ico" rel="Shortcut Icon">
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/layout_head.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/base.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/lib.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" href="../css/advanced_reply_common.css">
+		<link rel="stylesheet" type="text/css" href="../css/amr.css" />
+
+	</head>
+
+	<body class="zh_CN">
+		<div class="head" id="header">
+			<script type="text/javascript">
+				 //上报测速 --css加载完成点
+				window._points && (window._points[1] = +new Date());
+			</script>
+			<div class="head_box">
+				<div class="inner wrp">
+					<h1 class="logo"><a href="/" title="微信公众平台"></a></h1>
+					<div class="account">
+						<div class="account_meta account_info account_meta_primary">
+							<a href="/cgi-bin/settingpage?t=setting/index&action=index&token=1068501517&lang=zh_CN" class="nickname">永远的遗书</a>
+							<span class="type_wrp">
+                                        <a href="/cgi-bin/settingpage?t=setting/index&action=index&token=1068501517&lang=zh_CN" class="type icon_subscribe_label">订阅号</a>
+                                        
+                                        <a href="/merchant/store?action=detail&t=wxverify/detail&info=verify&lang=zh_CN&token=1068501517" class="type icon_verify_label fail">未认证</a>
+                                        
+                </span>
+							<a href="/cgi-bin/settingpage?t=setting/index&action=index&token=1068501517&lang=zh_CN">
+								<img src="../img/ourself.jpg" class="avatar">
+							</a>
+						</div>
+						<div id="accountArea" class="account_meta account_inbox account_meta_primary">
+							<a href="/cgi-bin/frame?t=notification/index_frame&lang=zh_CN&token=1068501517" class="account_inbox_switch">
+								<i class="icon_inbox">通知</i>&nbsp;
+							</a>
+						</div>
+						<div class="account_meta account_logout account_meta_primary"><a id="logout" href="/cgi-bin/logout?t=wxm-logout&lang=zh_CN&token=1068501517">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="body" class="body page_advanced_reply">
+			<div id="js_container_box" class="container_box cell_layout side_l">
+
+				<div class="col_side">
+					<div class="menu_box" id="menuBar">
+						<dl class="menu no_extra">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(../img/icon_menu_function.png) no-repeat;">
+    </i>功能
+            </dt>
+
+							<dd class="menu_item "><a data-id="10005" href="/cgi-bin/masssendpage?t=mass/send&token=1068501517&lang=zh_CN">群发功能</a>
+							</dd>
+							<dd class="menu_item selected"><a data-id="10006" href="/advanced/autoreply?t=ivr/reply&action=beadded&token=1068501517&lang=zh_CN">自动回复</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10007" href="/advanced/selfmenu?action=index&t=advanced/menu-setting&token=1068501517&lang=zh_CN">自定义菜单</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(../img/icon_menu_management.png) no-repeat;">
+    </i>管理
+            </dt>
+
+							<dd class="menu_item "><a data-id="10012" href="/cgi-bin/message?t=message/list&count=20&day=7&token=1068501517&lang=zh_CN">消息管理</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10013" href="/cgi-bin/contactmanage?t=user/index&pageidx=0&type=0&token=1068501517&lang=zh_CN">用户管理</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10014" href="/cgi-bin/appmsg?begin=0&count=10&t=media/appmsg_list&type=11&action=list&token=1068501517&lang=zh_CN">素材管理</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(../img/icon_menu_setup.png) no-repeat;">
+    </i>设置
+            </dt>
+
+							<dd class="menu_item "><a data-id="10019" href="/cgi-bin/settingpage?t=setting/index&action=index&token=1068501517&lang=zh_CN">公众号设置</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10022" href="/cgi-bin/safecenterstatus?action=view&t=setting/safe-index&token=1068501517&lang=zh_CN">安全中心</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title clickable">
+        <a href="/advanced/advanced?action=dev&t=advanced/dev&token=1068501517&lang=zh_CN">
+        <i class="icon_menu" style="background:url(../img/icon_menu_developer.png) no-repeat;">
+    </i>开发者中心
+    </a>        </dt>
+
+						</dl>
+					</div>
+
+				</div>
+
+				<div class="col_main">
+
+					<div class="main_hd">
+						<h2>自动回复</h2>
+					</div>
+					<div class="main_bd">
+						<div class="highlight_box icon_wrap icon_small border" id="div_stop" style="display:none">
+							<div class="opr">
+								<a href="javascript:;" class="btn btn_primary" id="btn_start">开启</a>
+							</div>
+							<span class="icon lock">
+            
+        </span>
+							<h4 class="title">未开启自动回复设置</h4>
+							<p class="desc">
+								通过编辑内容或关键词规则，快速进行自动回复设置。如具备开发能力，可更灵活地使用该功能。<a href="javascript:;" class="detail_desc">查看详情</a>
+							</p>
+						</div>
+						<div class="reply_pop_tips popover normal_flow pos_right" id="div_alertTips" style="display:none">
+							<div class="popover_inner">
+								<div class="popover_content">
+
+									<p class="">由于在开发者中心开启了回调URL和Token，当前自动回复设置已失效。你可以前往<a href="/advanced/advanced?action=dev&t=advanced/dev&token=1068501517&lang=zh_CN">开发者中心</a>进行停用。</p>
+
+								</div>
+							</div>
+							<i class="popover_arrow popover_arrow_out"></i>
+							<i class="popover_arrow popover_arrow_in"></i>
+						</div>
+						<div class="highlight_box icon_wrap icon_small border" id="div_start" style="display:none">
+							<div class="opr">
+								<a href="javascript:;" class="btn btn_warn" id="btn_stop">停用</a>
+							</div>
+							<span class="icon unlock">
+            
+        </span>
+							<h4 class="title">已开启自动回复设置</h4>
+							<p class="desc">
+								通过编辑内容或关键词规则，快速进行自动回复设置。如具备开发能力，可更灵活地使用该功能。<a href="javascript:;" class="detail_desc">查看详情</a>
+							</p>
+						</div>
+
+						<div class="content_wrap" id="div_replyContent" style="display:none">
+							<div class="global_mod mt_layout reply_tab_wrp">
+								<div class="section_tab">
+									<ul class="tab_navs">
+										<li class="tab_nav  ">
+											<a href="/advanced/autoreply?t=ivr/reply&action=beadded&token=1068501517&lang=zh_CN">被添加自动回复</a>
+										</li>
+										<li class="tab_nav  selected">
+											<a href="/advanced/autoreply?t=ivr/reply&action=autoreply&token=1068501517&lang=zh_CN">消息自动回复</a>
+										</li>
+										<li class="tab_nav no_extra ">
+											<a href="/advanced/autoreply?t=ivr/keywords&action=smartreply&token=1068501517&lang=zh_CN">关键词自动回复</a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="global_extra">
+									<span class="reply_title_tips mini_tips icon_after"><a href="http://kf.qq.com/info/80937.html" target="_blank">公众平台如何设置消息自动回复 <i class="icon_mini_tips document_link"></i></a></span>
+								</div>
+
+							</div>
+
+							<div class="msg_sender" id="js_msgSender"></div>
+
+							<div class="tool_bar">
+								<span id="js_save" class="btn btn_primary btn_input"><button>保存</button></span>
+								<span id="js_del" class="btn btn_default btn_input"><button>清除内容</button></span>
+							</div>
+						</div>
+
+						<div class="page_msg mini plugin_update_tips" id="js_authrized" style="display:none">
+							<div class="inner group">
+								<span class="msg_icon_wrp"><i class="icon_msg_mini warn"></i></span>
+								<div class="msg_content">
+									<p>由于该公众号已授权给<span class="js_thirdname"></span>，请注意：本页的自动回复设置已失效（且暂无法修改），若确认需要，可在<a href="/cgi-bin/component_unauthorize?action=list&t=service/auth_plugins&token=1068501517&lang=zh_CN">授权管理</a>中取消授权。</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="dn" id="pop_desc">
+						<p class="title">什么是临时会话？</p>
+						<p class="desc">微信用户在没有关注该公众号的前提下，临时发起的会话。</p>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="faq">
+				<ul class="links">
+					<li class="links_item"><a href="http://kf.qq.com/product/weixinmp.html" target="_blank">客服中心</a>
+					</li>
+					<li class="links_item"><a href="/acct/infringement?action=getmanual&t=infringement/manual&type=1&lang=zh_CN&token=1068501517" target="_blank">侵权投诉</a>
+					</li>
+				</ul>
+				<p class="tail">反馈官号weixingongzhong</p>
+			</div>
+
+		</div>
+		<div class="foot" id="footer">
+			<ul class="links ft">
+				<li class="links_item no_extra"><a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a>
+				</li>
+				<li class="links_item"><a href="/cgi-bin/readtemplate?t=home/agreement_tmpl&type=info&lang=zh_CN&token=1068501517" target="_blank">服务协议</a>
+				</li>
+				<li class="links_item"><a href="/cgi-bin/readtemplate?t=business/faq_operation_tmpl&type=info&lang=zh_CN&token=1068501517" target="_blank">运营规范</a>
+				</li>
+				<li class="links_item"><a href="http://kf.qq.com/product/weixinmp.html" target="_blank">客服中心</a>
+				</li>
+				<li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a>
+				</li>
+				<li class="links_item">
+					<p class="copyright">Copyright &copy; 2012-2015 Tencent. All Rights Reserved.</p>
+				</li>
+			</ul>
+
+		</div>
+		<script type="text/javascript">
+			 //上报测速 --dom加载完成点
+			window._points && (window._points[2] = +new Date());
+		</script>
+
+		<script type="text/javascript">
+			var MODULES = {};
+		</script>
+		<script type="text/javascript">
+			window.wx = {
+				version: "4.0.0",
+				data: {},
+				path: {},
+				acl: {},
+				events: {} //全局的事件绑定
+			};
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/sea.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/lib.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/wx.js"></script>
+
+		<script type="text/javascript">
+			define('widget/processor_bar.css', [], function() {
+				return null;
+			});
+			define('widget/emoji.css', [], function() {
+				return null;
+			});
+			define('page/cardticket/dialog_choose_card.css', [], function() {
+				return null;
+			});
+			define('page/smallvideo/dialog_select_video.css', [], function() {
+				return null;
+			});
+			define('page/media/dialog_img_pick.css', [], function() {
+				return null;
+			});
+			define('widget/pagination.css', [], function() {
+				return null;
+			});
+			define('widget/upload.css', [], function() {
+				return null;
+			});
+			define('widget/tooltip.css', [], function() {
+				return null;
+			});
+			define('widget/media.css', [], function() {
+				return null;
+			});
+			define('widget/media/richvideo.css', [], function() {
+				return null;
+			});
+			define('widget/media/media_dialog.css', [], function() {
+				return null;
+			});
+			define('widget/emotion_editor.css', [], function() {
+				return null;
+			});
+			define('widget/msg_tab.css', [], function() {
+				return null;
+			});
+			define('widget/msg_sender.css', [], function() {
+				return null;
+			});
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../jav/amr_1.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../jav/amr_2.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../jav/amr_3.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../jav/amr_4.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../jav/amr_5.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../jav/amr_6.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../miss/json218878.js"></script>
+		<script type="text/javascript" src="../miss/store21a6f0.js"></script>
+		<script type="text/javascript" src="../miss/webuploader234186.js"></script>
+		<script type="text/javascript">
+			wx.cgiData = {
+				replytype: "autoreply",
+				authrized: "0",
+				auth_info: {},
+				authirze_component_name: ""
+			};
+			var replyData = {
+				can: {
+					autoReply: true
+				},
+				modify: {
+					autoReplyModify: true
+				},
+				is: {
+					isOpen: true, //开启关闭开发模式
+					autoReply: true
+				}
+			}
+			seajs.use('ivr/reply', wx_main);;
+		</script>
+
+	</body>
+
+</html>

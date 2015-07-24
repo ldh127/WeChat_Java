@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta charset="utf-8">
+
+		<script type="text/javascript">
+			 //上报测速 --初始点
+			window._points = [+new Date()];
+			 //上报测速 --js加载完成点,通过编译工具加在seajs.use回调中
+			function wx_main(mod) {
+				window._points && (window._points[3] = +new Date());
+			};
+		</script>
+		<title>微信公众平台</title>
+		<link href="https://res.wx.qq.com/mpres/htmledition/images/favicon218877.ico" rel="Shortcut Icon">
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/layout_head.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/base.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/lib.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" href="../css/mass_list.css">
+		<link rel="stylesheet" type="text/css" href="../css/send/send_1.css" />
+
+	</head>
+
+	<body class="zh_CN">
+		<div class="head" id="header">
+			<script type="text/javascript">
+				 //上报测速 --css加载完成点
+				window._points && (window._points[1] = +new Date());
+			</script>
+			<div class="head_box">
+				<div class="inner wrp">
+					<h1 class="logo"><a href="/" title="微信公众平台"></a></h1>
+					<div class="account">
+						<div class="account_meta account_info account_meta_primary">
+							<a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN" class="nickname">永远的遗书</a>
+							<span class="type_wrp">
+                                        <a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN" class="type icon_subscribe_label">订阅号</a>
+                                        
+                                        <a href="/merchant/store?action=detail&t=wxverify/detail&info=verify&lang=zh_CN&token=938922762" class="type icon_verify_label fail">未认证</a>
+                                        
+                </span>
+							<a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN">
+								<img src="../img/ourself.jpg" class="avatar">
+							</a>
+						</div>
+						<div id="accountArea" class="account_meta account_inbox account_meta_primary">
+							<a href="/cgi-bin/frame?t=notification/index_frame&lang=zh_CN&token=938922762" class="account_inbox_switch">
+								<i class="icon_inbox">通知</i>&nbsp;
+							</a>
+						</div>
+						<div class="account_meta account_logout account_meta_primary"><a id="logout" href="/cgi-bin/logout?t=wxm-logout&lang=zh_CN&token=938922762">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="body" class="body page_mass_list">
+			<div id="js_container_box" class="container_box cell_layout side_l">
+
+				<div class="col_side">
+					<div class="menu_box" id="menuBar">
+						<dl class="menu no_extra">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(../img/icon_menu_function.png) no-repeat;">
+    </i>功能
+            </dt>
+
+							<dd class="menu_item selected"><a data-id="10005" href="/cgi-bin/masssendpage?t=mass/send&token=938922762&lang=zh_CN">群发功能</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10006" href="/advanced/autoreply?t=ivr/reply&action=beadded&token=938922762&lang=zh_CN">自动回复</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10007" href="/advanced/selfmenu?action=index&t=advanced/menu-setting&token=938922762&lang=zh_CN">自定义菜单</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(../img/icon_menu_management.png) no-repeat;">
+    </i>管理
+            </dt>
+
+							<dd class="menu_item "><a data-id="10012" href="/cgi-bin/message?t=message/list&count=20&day=7&token=938922762&lang=zh_CN">消息管理</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10013" href="/cgi-bin/contactmanage?t=user/index&pageidx=0&type=0&token=938922762&lang=zh_CN">用户管理</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10014" href="/cgi-bin/appmsg?begin=0&count=10&t=media/appmsg_list&type=11&action=list&token=938922762&lang=zh_CN">素材管理</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(
+        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_setup.png
+        ) no-repeat;">
+    </i>设置
+            </dt>
+
+							<dd class="menu_item "><a data-id="10019" href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN">公众号设置</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10022" href="/cgi-bin/safecenterstatus?action=view&t=setting/safe-index&token=938922762&lang=zh_CN">安全中心</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title clickable">
+        <a href="/advanced/advanced?action=dev&t=advanced/dev&token=938922762&lang=zh_CN">
+        <i class="icon_menu" style="background:url(../img/icon_menu_developer.png) no-repeat;">
+    </i>开发者中心
+    </a>        </dt>
+
+						</dl>
+					</div>
+
+				</div>
+
+				<div class="col_main">
+
+					<div class="main_hd">
+						<h2>群发功能</h2>
+						<div class="title_tab" id="topTab">&nbsp;</div>
+
+						<div class="extra_info mini_tips icon_after">
+							<a href="http://kf.qq.com/faq/120911VrYVrA131025QniAfu.html" target="_blank">群发消息规则说明<i class="icon_mini_tips document_link"></i></a>
+						</div>
+
+					</div>
+					<div class="main_bd">
+						<div class="table_wrp mass_history">
+							<table class="table" cellspacing="0">
+								<tbody class="tbody" id="masslist">
+									<script id="t_massList" type="text/html">
+										{if (list.length
+										<=0 )} <tr class="empty_item">
+											<td class="empty_tips" colspan="4">暂无消息</td>
+											</tr>
+											{else}
+											<tr class="mass_item">
+												<td class="table_cell tl">消息类型</td>
+												<td class="table_cell tl">发送对象</td>
+												<td class="table_cell tl">发送时间</td>
+												<td class="table_cell tl">发送状态</td>
+												<td class="table_cell tr opr">操作</td>
+											</tr>
+											{each list as item i}
+											<tr class="mass_item" id="massItem{item.id}">
+												<td class="table_cell tl mass_content">
+													<div id="file{item.id}" data-id="{item.id}" class="mass_wrp {if item.type==1}text{/if}"></div>
+												</td>
+												<td class="table_cell tl mass_info">
+													<em class="">
+                            {if item.is_send_all==1}
+                                全部
+                            {else}
+                                {if item.group_name}分组：{item.group_name}<br>{/if}
+
+                                {if item.sex==0}
+                                {else if item.sex==1}性别：男<br>
+                                {else if item.sex==2}性别：女<br>
+                                {/if}
+
+                                {if item.country}地区：{item.country}{item.city}{/if}
+                            {/if}
+                            </em>
+												</td>
+												<td class="table_cell tl mass_info">
+													<em class="mass_time">{timeFormat item.date_time}</em>
+												</td>
+												<td class="table_cell tl mass_tips">
+													<span class="js_status mass_tips_meta status js_result {if ((item.msg_status==5&&item.send_stat.progress==0) || item.msg_status == 6)}status_error{/if}" data-id="{item.id}">{massStatus item}<i class="icon_arrow_down"></i></span>
+													<span class="js_desc mass_tips_meta desc">{massDesc item}</span>
+												</td>
+												<td class="table_cell tr mass_opr">
+													{if (item.msg_status==2||item.msg_status==5)}
+													<a class="js_del" data-id="{item.id}" data-index="{i}" data-type="{item.type}" href="javascript:void(0);">删除</a> {/if} &nbsp;
+												</td>
+											</tr>
+											{/each} {/if}
+									</script>
+								</tbody>
+							</table>
+						</div>
+						<div class="tool_area">
+							<div class="pagination_wrp pageNavigator"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="foot" id="footer">
+			<ul class="links ft">
+				<li class="links_item">
+					<p class="copyright">Copyright &copy; 2012-2015 Tencent. All Rights Reserved.</p>
+				</li>
+			</ul>
+
+		</div>
+		<script type="text/javascript">
+			 //上报测速 --dom加载完成点
+			window._points && (window._points[2] = +new Date());
+		</script>
+
+		<script type="text/javascript">
+			var MODULES = {};
+		</script>
+		<script type="text/javascript">
+			window.wx = {
+				version: "4.0.0",
+				data: {},
+				path: {},
+				acl: {},
+				events: {} //全局的事件绑定
+			};
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/sea.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/lib.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/wx.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../miss/json218878.js"></script>
+		<script type="text/javascript" src="../miss/store21a6f0.js"></script>
+		<script type="text/javascript" src="../miss/webuploader234186.js"></script>
+
+		<script type="text/javascript">
+			_points && (_points[3] = +new Date());
+
+			function getico(i) {
+				var _img = new Image(1, 1);
+				_img.src = wx.url && wx.url(location.protocol + "//" + location.host + "/misc/getico" + "?location=" + (i || -1) + "&rand=" + Math.random());
+			};
+			getico('1615');
+			/****************************邪恶的上报分割线**********************************************************/
+			 //上报测速  --onready测速点
+			jQuery(function() {
+				window._points && (window._points[4] = +new Date()); //onready
+			});
+			window.onload = function() {
+				//onload测速点
+				window._points && (window._points[5] = +new Date()); //onload
+				var params = [];
+				setTimeout(function() {
+					//是否支持html5
+					if (window.performance && window.performance.timing && window.performance.timing.navigationStart) {
+						params.push("flag1=7839&flag2=4&flag3=3");
+						//html上报排序
+						var field = [
+							"navigationStart",
+							"unloadEventStart",
+							"unloadEventEnd",
+							"redirectStart",
+							"redirectEnd",
+							"fetchStart",
+							"domainLookupStart",
+							"domainLookupEnd",
+							"connectStart",
+							"connectEnd",
+							"requestStart",
+							"responseStart",
+							"responseEnd",
+							"domLoading",
+							"domInteractive",
+							"domContentLoadedEventStart",
+							"domContentLoadedEventEnd",
+							"domComplete",
+							"loadEventStart",
+							"loadEventEnd"
+						];
+						field.each(function(name, i) {
+							field[i] = window.performance.timing[name];
+						});
+						//将html测速点和页面测速点合并
+						_points = field.concat(_points.slice(1));
+						//如果页面有https连接上报
+						window.performance.timing.secureConnectionStart && _points.push(window.performance.timing.secureConnectionStart);
+					} else {
+						params.push("flag1=7839&flag2=4&flag3=2");
+					}
+					_points && _points.each(function(p, i) {
+						if (i > 0 && p > 0) {
+							(p - _points[0]) && params.push(i + "=" + (p - _points[0]))
+						} else {
+							//console.log(i + ":" + p);
+						}
+					});
+					_sendReport(params.join("&"));
+				}, 3000);
+			}
+
+			function _sendReport(param) {
+				if (window.location.href.indexOf("https") > -1) {
+					var img = new Image();
+					img.src = "https://huatuospeed.weiyun.com/cgi-bin/r.cgi?" + param;
+				} else {
+					console.log(param);
+				}
+			}
+			seajs.use('common/wx/Log', wx_main);;
+			 //菜单中 所有子菜单dd 带A标签中有new class的元素
+			jQuery("#menuBar").find("dd>a").click(function(event) {
+				if ($(this).find(".new").length > 0) {
+					jQuery.ajax({
+						url: "/misc/navoperation",
+						data: {
+							action: "click",
+							id: $(this).data("id"),
+							token: wx.data.t
+						},
+						type: "post"
+					})
+				}
+				//return false;
+			});
+		</script>
+
+		<script type="text/javascript">
+			define('widget/media/richvideo.css', [], function() {
+				return null;
+			});
+			define('widget/media.css', [], function() {
+				return null;
+			});
+			define('widget/pagination.css', [], function() {
+				return null;
+			});
+			define('widget/emoji.css', [], function() {
+				return null;
+			});
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../jav/sended.js"></script>
+
+		<script type="text/html" id="jsVoteResultPop">
+			<div class="vote_item">
+				<div class="vote_item_hd">
+					{if (vote_prev_show)}
+					<a class="vote_nav last js_vote_prev" href="javascript:void(0);">上一个投票</a> {/if} {if (vote_next_show)}
+					<a class="vote_nav next js_vote_next" href="javascript:void(0);">下一个投票</a> {/if}
+					<h4 class="vote_title">{vote_title}</h4>
+				</div>
+				<div class="vote_item_bd">
+
+					<p class="vote_tips">{vote_start_date}开始，{vote_end_date}结束，共{vote_person}人参与</p>
+
+					<ul class="vote_option_list" id="jsVoteResultList">
+						{each vote_options as item index}
+						<li class="vote_option">
+							<strong class="vote_option_title">{index+1}. {item.name}</strong>
+							<div class="vote_result">
+								<span class="vote_result_meta tips vote_number">{item.num}人</span>
+								<span class="vote_result_meta tips vote_percent">{item.percent}%</span>
+								<div class="vote_result_meta vote_graph">
+									<em style="width:{item.percent}%;background-color:{item.color}" class="vote_progress"></em>
+								</div>
+							</div>
+						</li>
+						{/each}
+					</ul>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/html" id="jsVoteResultItem">
+
+		</script>
+
+		<script type="text/html" id="msgDel">
+			<ul class="msgdel_list">
+				{each multi_item as item index}
+				<li class="msgdel_item">
+					<input type="checkbox" class="delCheck {if item.is_deleted == 1}deleted{/if}" data-label="[{type_msg}{item.seq}]{item.title}" data-index="{index}" {if item.is_deleted==1 }disabled="true" {/if}>
+				</li>
+				{/each}
+			</ul>
+		</script>
+		<script type="text/html" id="js_massResult">
+			{if msg_status == 1 || (msg_status >= 101 && msg_status
+			<=1 04)} <p>正在排队等候系统发送，可能需要10-20分钟</p>
+				{else if msg_status >= 105 && msg_status
+				<=1 06} <div class="progress_bar">
+					<div class="complete_bar" style="width:{send_stat.progress}%"></div>
+					</div>
+					<p>已发送{send_stat.succ}人</p>
+					{else if (msg_status == 2)}
+					<p>成功发送人数：{send_stat.succ}人</p>
+					<p>失败人数：{send_stat.fail}人</p>
+					{if type == 9 &&is_deleted==true}
+					<span>---------------------------------</span>
+					<br> {each multi_item as item index} {if item.is_deleted == 1}
+					<span class="lbl_content deleted">[图文消息{index+1}]</span>已删除
+					<br> {/if} {/each} {/if} {else if (msg_status == 5)} {if send_stat.progress > 0}
+					<p>成功发送人数：{send_stat.succ}人</p>
+					<p>失败人数：{send_stat.fail}人</p>
+					<p style="color:#8D8D8D;margin-bottom:10px;">失败原因可查询<a target="_blank" href="http://kf.qq.com/faq/120911VrYVrA131025QniAfu.html">群发消息规则说明</a>
+					</p>
+					{else}
+					<p>系统繁忙，请稍后重试。</p>
+					{/if} {else if (msg_status == 6)}
+					<p>文章审核未通过，无法发送</p>
+					{else if (msg_status == 7)}
+					<p>该文章已被您删除，您的粉丝在“查看历史消息”中将无法查看该文章</p>
+					{else if (msg_status == 8)}
+					<p>此内容被多次举报，无法查看</p>
+					{/if} {if multi_item.length == 1} {if copyright_type == 1} {if copyright_status == 11}
+					<p>原创声明：成功</p>
+					{else if copyright_status == 12 || copyright_status == 13}
+					<p>原创声明：失败</p>
+					{else}
+					<p>正在对原创声明内容进行审核</p>
+					{/if} {/if} {else} {if original_success + original_fail
+					< original_apply} <p>正在对原创声明内容进行审核</p>
+						{else if original_success != 0 && original_fail == 0}
+						<p>原创声明：{original_success}篇声明成功</p>
+						{else if original_success == 0 && original_fail != 0}
+						<p>原创声明：{original_success}篇声明失败</p>
+						{else if original_success != 0 && original_fail != 0}
+						<p>原创声明：{original_success}篇声明成功，{original_fail}篇声明失败</p>
+						{/if} {/if}
+		</script>
+
+		<script type="text/javascript">
+			wx.cgiData = {
+				mass_send_left: 0,
+				list: ({
+					"msg_item": [{
+						"id": 206684001,
+						"type": 1,
+						"fakeid": "3088008258",
+						"nick_name": "永远的遗书",
+						"date_time": 1436019997,
+						"content": "天空之大，你竟从未见过。",
+						"source": "mass",
+						"msg_status": 2,
+						"comment_url": "",
+						"has_reply": 0,
+						"refuse_reason": "",
+						"multi_item": [],
+						"to_uin": 0,
+						"send_stat": {
+							"total": 1,
+							"succ": 1,
+							"fail": 0,
+							"progress": 100
+						},
+						"is_send_all": 1
+					}]
+				}).msg_item,
+				total_count: 1,
+				begin: "0" * 1 || 0,
+				count: "10" * 1 || 50
+			};
+			seajs.use('mass/list', wx_main);;
+		</script>
+
+		<script type="text/html" id="js_faqscene_tpl">
+			<div class="faqscene" id="js_faqscene_p">
+				<div class="faqscene_inner">
+					<div class="faqscene_name js_faq_trigger">常见问题</div>
+					<div class="faqscene_panel js_faq_main_panel">
+						<a href="###" class="faqscene_close">x</a>
+						<div class="faqscene_hd">{data.question}</div>
+						<div class="faqscene_bd">
+							<div class="faqscene_tabs">
+								<div class="faqscene_tab_hd">
+									<ul class="js_faq_class1">
+										{if data.guide_list.length>2} {each data.guide_list as guide i} {if guide}
+										<li data-report-id="{guide.report_id}"><a {if i==0}class="active" {/if} href="javascript:;">{guide.itemname}</a>
+										</li>
+										{/if} {/each} {/if}
+									</ul>
+								</div>
+								{if data.guide_list.length>1} {/if} {each data.guide_list as guide i} {if guide}
+								<div class="faqscene_tab_bd js_faqscene_content">
+									<ul>
+										{each guide.subitems as subitem i} {if subitem}
+										<li><a target="_blank" href="{subitem.kf_url}">{subitem.title}</a>
+										</li>
+										{/if} {/each}
+									</ul>
+								</div>
+								{/if} {/each}
+							</div>
+						</div>
+						<div class="faqscene_ft"><a href="{data.more_help.kf_url}" target="_blank">{data.more_help.title}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/javascript">
+			;;;
+			(function() {
+				var jq = jQuery;
+				var dom = null;
+				var panel = null;
+				var close = null
+				var faqArea = null;
+				var timer = null;
+				var tab_heads = null;
+				var tab_contents = null;
+				var token = "938922762"
+				var report_id = null;
+				/**
+				 * 加载FAQ数据以及进行初始化
+				 */
+				function loadDataAndInit() {
+					var param = "&cginame=" + urlParser.parser.pathname.replace(/^\//, '');
+					var tValue = urlParser.getParam("t");
+					var actionValue = urlParser.getParam("action");
+					param += token ? ("&token=" + token) // 带上token
+						: "";
+					param += tValue ? ("&t=" + tValue) : ("&action=" + actionValue);
+					var getFAQUrl = "/misc/faq?action=getfaq&lang=zh_CN&f=json" + param;
+					$.ajax({
+						type: "GET",
+						url: getFAQUrl,
+					}).success(function(data) {
+						if (data.base_resp.ret !== 0) return;
+						wx.faq_list = data.base_resp.assistant.problem;
+						if (!wx.faq_list.question) return; // 做保护，防止没有吐出
+						renderFaq();
+						makeActions();
+						initReport();
+						panel.hide();
+						goto(0);
+					}).error(function(error) {; // ignore
+					});
+				}
+
+				function renderFaq() {
+						jq("body").append(template.render("js_faqscene_tpl", {
+							data: wx.faq_list
+						}));
+						dom = jq("#js_faqscene_p");
+						panel = dom.find(".js_faq_main_panel");
+						close = dom.find(".faqscene_close");
+						faqArea = dom.find(".faqscene_inner");
+						timer = null;
+						tab_heads = dom.find(".js_faq_class1 li");
+						tab_contents = dom.find(".js_faqscene_content");
+					}
+					/**
+					 * 点击某个字分类显示该子分类的问题列表
+					 *
+					 * @param {Number} idx - 该子分类的下标
+					 */
+
+				function goto(idx) {
+					var $currentTab = tab_heads.eq(idx);
+					tab_contents.hide();
+					subitem = $currentTab.find("a").text();
+					report_id = (idx === 0) ? wx.faq_list.guide_list[0].report_id : $currentTab.data("report-id");
+					jq(tab_contents[idx]).show();
+					tab_heads.find("a").removeClass("active");
+					jq(tab_heads[idx]).find("a").addClass("active");
+				}
+
+				function makeActions() {
+						tab_heads.click(function() {
+							var idx = jq(this).index();
+							goto(idx);
+						});
+						// 点击x隐藏FAQ
+						close.on("click", function(event) {
+							event.preventDefault();
+							clearTimeout(timer);
+							panel.hide();
+						});
+						// 鼠标移出FAQ隐藏
+						faqArea.on("mouseover", function() {
+							clearTimeout(timer);
+							panel.show();
+						});
+						faqArea.on("mouseout", function(event) {
+							timer = setTimeout(function() {
+								panel.hide();
+							}, 300);
+						});
+					}
+					/*======================== 用户点击，上报数据统计 =======================*/
+				var subitem = null;
+				var questText = "none";
+				var questLink = "none";
+				var urlParser = new URLParser(window.location.href);
+
+				function initReport() {
+						subitem = wx.faq_list.guide_list[0].itemname;
+						report_id = wx.faq_list.guide_list[0].report_id;
+						// 上报每个独立的问题
+						jq("div.js_faqscene_content").find("a").click(function(event) {
+							var $question = jq(this);
+							questText = $question.text();
+							questLink = $question.attr("href");
+							var reportData = getReportData();
+							report(reportData);
+						});
+						// 上报更多问题链接的点击
+						jq("div.faqscene_ft a").click(function(event) {
+							var $more = jq(this);
+							questText = $more.text();
+							var reportData = getReportData();
+							reportData.report_id = wx.faq_list.help_report_id;
+							report(reportData);
+						});
+					}
+					/**
+					 * ajax上报点击统计数据
+					 *
+					 * @param {Object} data - 统计数据
+					 */
+
+				function report(data) {
+						//console.log(data);
+						var reportUrl = "/misc/faq?action=report"
+						$.ajax({
+							url: reportUrl,
+							data: data,
+							type: "POST"
+						}).success(function(data) {
+							//console.log(data);
+						});
+					}
+					/**
+					 * 获取需要上报的数据
+					 *
+					 * @return {Object} 需要上报的数据
+					 */
+
+				function getReportData() {
+						var data = {};
+						data.report_id = report_id;
+						data.question = questText;
+						data.action = "report";
+						return data;
+					}
+					/**
+					 * URL分析器
+					 *
+					 * @param {String} url - 需要传入的URL
+					 * @constructor
+					 */
+
+				function URLParser(url) {
+						// Check out this gist for URL parser hack: 
+						// https://gist.github.com/jlong/2428561
+						var $el = jq("<a></a>").attr("href", url);
+						this.el = $el.get(0);
+						this.parser = this.el;
+					}
+					/**
+					 * 获取URL中的请求特定的请求参数
+					 *
+					 * @param {String} key - 需要查询的参数的键
+					 * @return {String|Null} - 返回值，不存在则为null
+					 */
+				URLParser.prototype.getParam = function(key) {
+					var KEY_REG = new RegExp("([\?&])" + key + "=([^&#]*)([&#])?");
+					var result = this.el.search.match(KEY_REG);
+					return result ? result[2] : null;
+				};
+				loadDataAndInit();
+			})();
+		</script>
+
+	</body>
+
+</html>
+
+<input type="radio" class="frm_radio">

@@ -1,0 +1,62 @@
+[
+	{
+		"text": "子菜单1",
+		"children": [
+			{
+				"id": "type",
+				"text": "type",
+				"type": "file"
+			},
+			{
+				"id": "name",
+				"text": "name",
+				"type": "file"
+			},
+			{
+				"id": "key/url",
+				"text": "key/url",
+				"type": "file"
+			}
+		]
+	}, 
+	{
+		"text": "子菜单2",
+		"children": [
+			{
+				"id": "type",
+				"text": "type",
+				"type": "file"
+			},
+			{
+				"id": "name",
+				"text": "name",
+				"type": "file"
+			},
+			{
+				"id": "key/url",
+				"text": "key/url",
+				"type": "file"
+			}
+		]
+	},
+		{
+		"text": "子菜单3",
+		"children": [
+			{
+				"id": "type",
+				"text": "type",
+				"type": "file"
+			},
+			{
+				"id": "name",
+				"text": "name",
+				"type": "file"
+			},
+			{
+				"id": "key/url",
+				"text": "key/url",
+				"type": "file"
+			}
+		]}
+	
+]

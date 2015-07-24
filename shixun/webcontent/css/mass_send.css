@@ -1,0 +1,73 @@
+.page_mass_send .sub_title_bar {
+	padding-top: 10px;
+	padding-bottom: 16px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-bottom-width: 0
+}
+.page_mass_send .tool_area {
+	padding: 14px 30px 0;
+	color: #8d8d8d
+}
+.page_mass_send .tool_bar {
+	margin: 5px 30px 0;
+	text-align: left
+}
+.page_mass_send .tool_bar .btn {
+	margin-left: 0
+}
+.page_mass_send .tool_bar .verifycode {
+	margin-right: 10px;
+	margin-bottom: 25px
+}
+.page_mass_send .msg_sender {
+	margin: 0 30px
+}
+.mass_send_tips i,
+.mass_send_tips em {
+	font-weight: 400;
+	font-style: normal
+}
+.mass_send_function {
+	overflow: hidden
+}
+.mass_send_function em {
+	font-weight: 400;
+	font-style: normal
+}
+.mass_send_function li {
+	float: left;
+	margin-right: 20px
+}
+.warn_tips {
+	width: 430px;
+	margin-top: 10px;
+	color: #7b7b7b
+}
+.send_filter {
+	padding: 0 30px;
+	margin-bottom: 20px
+}
+.send_filter .label {
+	line-height: 30px
+}
+.send_filter .dropdown_menu {
+	margin-right: 8px
+}
+.send_filter .grid_item {
+	padding-right: 8px
+}
+.filter_content {
+	font-size: 0
+}
+.tab_cont_cover .appmsg_cover .create_access:hover .add_gray_wrp {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1
+}
+.create_access:hover .add_gray {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1
+}

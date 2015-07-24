@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			 //上报测速 --初始点
+			window._points = [+new Date()];
+			 //上报测速 --js加载完成点,通过编译工具加在seajs.use回调中
+			function wx_main(mod) {
+				window._points && (window._points[3] = +new Date());
+			};
+		</script>
+		<title>微信公众平台</title>
+		<link href="../img/old/logo.ico" rel="Shortcut Icon">
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/layout_head.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/base.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/lib.css" />
+
+		<link onerror="wx_loaderror(this)" rel="stylesheet" href="../css/set_user_safe.css">
+
+	</head>
+
+	<body class="zh_CN">
+		<div class="head" id="header">
+			<script type="text/javascript">
+				 //上报测速 --css加载完成点
+				window._points && (window._points[1] = +new Date());
+			</script>
+			<div class="head_box">
+				<div class="inner wrp">
+					<h1 class="logo"><a href="/" title="微信公众平台"></a></h1>
+					<div class="account">
+						<div class="account_meta account_info account_meta_primary">
+							<a href="info_set_page.action" class="nickname">永远的遗书</a>
+							<span class="type_wrp">
+                                        <a href="info_set_page.action" class="type icon_subscribe_label">订阅号</a>
+                                        
+                                        <a href="/merchant/store?action=detail&t=wxverify/detail&info=verify&lang=zh_CN&token=923771532" class="type icon_verify_label fail">未认证</a>
+                                        
+                </span>
+							<a href="info_set_page.action">
+								<img src="/misc/getheadimg?fakeid=3088008258&token=923771532&lang=zh_CN" class="avatar">
+							</a>
+						</div>
+						<div id="accountArea" class="account_meta account_inbox account_meta_primary">
+							<a href="/cgi-bin/frame?t=notification/index_frame&lang=zh_CN&token=923771532" class="account_inbox_switch">
+								<i class="icon_inbox">通知</i>&nbsp;
+							</a>
+						</div>
+						<div class="account_meta account_logout account_meta_primary"><a id="logout" href="/cgi-bin/logout?t=wxm-logout&lang=zh_CN&token=923771532">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="body" class="body safe_index">
+			<div id="js_container_box" class="container_box cell_layout side_l">
+
+				<div class="col_side">
+					<div class="menu_box" id="menuBar">
+						<dl class="menu no_extra">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(../img/icon_menu_function.png) no-repeat;">
+    </i>功能
+            </dt>
+
+							<dd class="menu_item "><a data-id="10005" href="Platform/funtion_send_all.jspN">群发功能</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10006" href="key_set_page">自动回复</a>
+							</dd>
+							menu_load_page
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(../img/icon_menu_management.png) no-repeat;">
+    </i>管理
+            </dt>
+
+							<dd class="menu_item "><a data-id="10012" href="/cgi-bin/message?t=message/list&count=20&day=7&token=923771532&lang=zh_CN">消息管理</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10013" href="/cgi-bin/contactmanage?t=user/index&pageidx=0&type=0&token=923771532&lang=zh_CN">用户管理</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10014" href="/cgi-bin/appmsg?begin=0&count=10&t=media/appmsg_list&type=11&action=list&token=923771532&lang=zh_CN">素材管理</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(
+        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_setup.png
+        ) no-repeat;">
+    </i>设置
+            </dt>
+
+							<dd class="menu_item "><a data-id="10019" href="info_set_page.action">公众号设置</a>
+							</dd>
+							<dd class="menu_item selected"><a data-id="10022" href="/cgi-bin/safecenterstatus?action=view&t=setting/safe-index&token=923771532&lang=zh_CN">安全中心</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title clickable">
+        <a href="/advanced/advanced?action=dev&t=advanced/dev&token=923771532&lang=zh_CN">
+        <i class="icon_menu" style="background:url(../img/icon_menu_developer.png) no-repeat;">
+    </i>开发者中心
+    </a>        </dt>
+
+						</dl>
+					</div>
+
+				</div>
+
+				<div class="col_main">
+
+					<div class="main_hd">
+						<h2>安全中心</h2>
+					</div>
+					<div class="main_bd">
+						<ul class="safe_list">
+
+							<li class="safe_item" id="js_admins">
+								<dl>
+									<dt class="title">管理员微信号</dt>
+									<dd>
+										<span class="opr">
+						<a href="/cgi-bin/safecenterstatus?action=admins&t=setting/safe-admins&token=923771532&lang=zh_CN">详情</a>
+					</span>
+										<span class="desc js_suc" style="display:none;">你的帐号已绑定管理员微信号及<span></span>个运营者微信号</span>
+										<span class="desc js_fail" style="display:none;">你的帐号未设置管理员微信号，存在安全风险请设置</span>
+									</dd>
+								</dl>
+							</li>
+
+							<li class="safe_item" id="js_protect">
+								<dl>
+									<dt class="title">风险操作保护</dt>
+									<dd>
+										<span class="opr">
+						<a href="/cgi-bin/safecenterstatus?action=protect&t=setting/safe-protect&token=923771532&lang=zh_CN">详情</a>
+					</span>
+										<span class="desc js_suc" style="display:none;">你的帐号已开启风险操作微信保护，进行风险操作时需进行微信号验证</span>
+										<span class="desc js_fail" style="display:none;">你的帐号未开启风险操作微信保护，存在安全风险，请马上设置</span>
+									</dd>
+								</dl>
+							</li>
+
+							<li class="safe_item" id="js_notify">
+								<dl>
+									<dt class="title">风险操作提醒</dt>
+									<dd>
+										<span class="opr">
+						<a href="/cgi-bin/safecenterstatus?action=notify&t=setting/safe-notify&token=923771532&lang=zh_CN">详情</a>
+					</span>
+										<span class="desc js_suc" style="display:none;">你的帐号已开启风险操作微信提醒，进行风险操作时将进行微信号提醒</span>
+										<span class="desc js_fail" style="display:none;">你的帐号未开启风险操作微信提醒，存在安全风险，请马上设置</span>
+									</dd>
+								</dl>
+							</li>
+
+							<li class="safe_item" id="js_record">
+								<dl>
+									<dt class="title">风险操作记录</dt>
+									<dd>
+										<span class="opr">
+						<a href="/cgi-bin/safecenter_operrecord?action=login&t=setting/safe-record&day=7&token=923771532&lang=zh_CN">详情</a>
+					</span>
+										<span class="desc">
+                    	最近操作：
+                    	2015.07.05                    	&nbsp;
+                    	登录
+                    	                    	&nbsp;
+                    	深圳市                    </span>
+									</dd>
+								</dl>
+							</li>
+							<li class="safe_item">
+								<dl>
+									<dt class="title">修改密码</dt>
+									<dd>
+										<span class="opr">
+                        <a href="javascript:;" id="js_pwd" target="_blank">修改</a>
+                    </span>
+										<span class="desc">
+                        用管理员微信扫码验证后，修改你的密码
+                    </span>
+										<span class="desc" style="display:none;">
+                        最近操作：
+                                                &nbsp;
+                        暂无操作记录
+                                            </span>
+									</dd>
+								</dl>
+							</li>
+
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="foot" id="footer">
+			<ul class="links ft">
+				<li class="links_item">
+					<p class="copyright">Copyright &copy; 2012-2015 Tencent. All Rights Reserved.</p>
+				</li>
+			</ul>
+
+		</div>
+		<script type="text/javascript">
+			 //上报测速 --dom加载完成点
+			window._points && (window._points[2] = +new Date());
+		</script>
+
+		<script type="text/javascript">
+			var MODULES = {};
+		</script>
+		<script type="text/javascript">
+			window.wx = {
+				version: "4.0.0",
+				data: {
+					t: "923771532",
+					ticket: "de1370850625f6fc0fe247454917450489ae3e40",
+					lang: 'zh_CN',
+					param: ["&token=923771532", '&lang=zh_CN'].join(""),
+					uin: "3088008258",
+					uin_base64: "MzA4ODAwODI1OA==",
+					user_name: "gh_773789eeddab",
+					nick_name: "永远的遗书",
+					time: "1436064384" || new Date().getTime() / 1000
+				},
+				path: {
+					video: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/video-js218877.swf",
+					audio: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/audiojs218877.swf",
+					uploadify: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/uploadify218877.swf",
+					webuploader: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/webuploader230dc3.swf",
+					zoom: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/zoom230dc3.swf",
+					rimgcrop: "https://res.wx.qq.com/mpres/htmledition/images/cut-round218877.gif"
+				},
+				acl: {
+					"msg_acl": {
+						"can_text_msg": 1,
+						"can_image_msg": 1,
+						"can_voice_msg": 1,
+						"can_video_msg": 1,
+						"can_app_msg": 1,
+						"can_commodity_app_msg": 0,
+						"can_card_msg": "0" * 1 || 0, // @cunjinli改掉
+						"can_use_shortvideo": "0" * 1
+					},
+					"ivr_acl": {
+						"can_text_msg": 1,
+						"can_image_msg": 1,
+						"can_voice_msg": 1,
+						"can_video_msg": 1,
+						"can_app_msg": 1,
+						"can_commodity_app_msg": 0
+					},
+					"merchant_acl": {
+						"can_use_pay_tmpl": "" * 1,
+						"can_use_account_manage": "" * 1
+					},
+					"ad_system": {
+						"can_use_sp": "" * 1
+					}
+				},
+				events: {} //全局的事件绑定
+			};
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/sea.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/lib.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/wx.js"></script>
+
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../miss/json218878.js"></script>
+		<script type="text/javascript" src="../miss/store21a6f0.js"></script>
+		<script type="text/javascript" src="../miss/webuploader234186.js"></script>
+
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/set_user_safe.js"></script>
+		<script type="text/html">
+			<div class="frm_desc">
+				修改密码属于风险操作，需要向你XXX</div>
+			<div class="frm_control_group">
+				<div class="frm_controls">
+					<span class="frm_input_box vcode_input_box"><input type="text" class="frm_input"></span>
+					<a href="javascript:void(0);" class="btn btn_default btn_vcode">获取验证码</a>
+				</div>
+			</div>
+		</script>
+		<script type="text/html">
+			<div class="page_msg">
+				<div class="inner">
+					<span class="msg_icon_wrp"><i class="icon_msg warn"></i></span>
+					<div class="msg_content">
+						<h4>安全令牌验证</h4>
+						<p>请填写安全令牌的验证码</p>
+						<span class="frm_input_box vcode_input_box"><input type="text" class="frm_input"></span>
+					</div>
+				</div>
+			</div>
+		</script>
+		<script type="text/javascript">
+			wx.cgiData = {
+				strategy_resp: ({
+					"base_resp": {
+						"ret": 0,
+						"err_msg": "ok"
+					},
+					"strategy_resp": {
+						"strategy_status": {
+							"wx_protect": 1,
+							"mobile": "+86136******39",
+							"wx_uin": 910245841,
+							"wx_alias": "shm*****dl",
+							"protect_status": 2,
+							"is_qq_user": 0
+						}
+					},
+					"appid": "wxaae7c19708735ee0",
+					"ticket": "d5eaba2e727e5590136a",
+					"seconde_amin": [],
+					"item_list": {
+						"item_list": []
+					}
+				}).strategy_resp,
+				send_admins: ({
+					"base_resp": {
+						"ret": 0,
+						"err_msg": "ok"
+					},
+					"strategy_resp": {
+						"strategy_status": {
+							"wx_protect": 1,
+							"mobile": "+86136******39",
+							"wx_uin": 910245841,
+							"wx_alias": "shm*****dl",
+							"protect_status": 2,
+							"is_qq_user": 0
+						}
+					},
+					"appid": "wxaae7c19708735ee0",
+					"ticket": "d5eaba2e727e5590136a",
+					"seconde_amin": [],
+					"item_list": {
+						"item_list": []
+					}
+				}).seconde_amin
+			};
+			seajs.use('safe/index', wx_main);;
+		</script>
+
+		<script type="text/javascript">
+			;;;
+			(function() {
+				var jq = jQuery;
+				var dom = null;
+				var panel = null;
+				var close = null
+				var faqArea = null;
+				var timer = null;
+				var tab_heads = null;
+				var tab_contents = null;
+				var token = "923771532"
+				var report_id = null;
+				/**
+				 * 加载FAQ数据以及进行初始化
+				 */
+				function loadDataAndInit() {
+					var param = "&cginame=" + urlParser.parser.pathname.replace(/^\//, '');
+					var tValue = urlParser.getParam("t");
+					var actionValue = urlParser.getParam("action");
+					param += token ? ("&token=" + token) // 带上token
+						: "";
+					param += tValue ? ("&t=" + tValue) : ("&action=" + actionValue);
+					var getFAQUrl = "/misc/faq?action=getfaq&lang=zh_CN&f=json" + param;
+					$.ajax({
+						type: "GET",
+						url: getFAQUrl,
+					}).success(function(data) {
+						if (data.base_resp.ret !== 0) return;
+						wx.faq_list = data.base_resp.assistant.problem;
+						if (!wx.faq_list.question) return; // 做保护，防止没有吐出
+						renderFaq();
+						makeActions();
+						initReport();
+						panel.hide();
+						goto(0);
+					}).error(function(error) {; // ignore
+					});
+				}
+
+
+
+
+					/*======================== 用户点击，上报数据统计 =======================*/
+				var subitem = null;
+				var questText = "none";
+				var questLink = "none";
+				var urlParser = new URLParser(window.location.href);
+
+				function initReport() {
+						subitem = wx.faq_list.guide_list[0].itemname;
+						report_id = wx.faq_list.guide_list[0].report_id;
+						// 上报每个独立的问题
+						jq("div.js_faqscene_content").find("a").click(function(event) {
+							var $question = jq(this);
+							questText = $question.text();
+							questLink = $question.attr("href");
+							var reportData = getReportData();
+							report(reportData);
+						});
+						// 上报更多问题链接的点击
+						jq("div.faqscene_ft a").click(function(event) {
+							var $more = jq(this);
+							questText = $more.text();
+							var reportData = getReportData();
+							reportData.report_id = wx.faq_list.help_report_id;
+							report(reportData);
+						});
+					}
+					/**
+					 * ajax上报点击统计数据
+					 *
+					 * @param {Object} data - 统计数据
+					 */
+
+				function report(data) {
+						//console.log(data);
+						var reportUrl = "/misc/faq?action=report"
+						$.ajax({
+							url: reportUrl,
+							data: data,
+							type: "POST"
+						}).success(function(data) {
+							//console.log(data);
+						});
+					}
+					/**
+					 * 获取需要上报的数据
+					 *
+					 * @return {Object} 需要上报的数据
+					 */
+
+				function getReportData() {
+						var data = {};
+						data.report_id = report_id;
+						data.question = questText;
+						data.action = "report";
+						return data;
+					}
+					/**
+					 * URL分析器
+					 *
+					 * @param {String} url - 需要传入的URL
+					 * @constructor
+					 */
+
+				function URLParser(url) {
+						// Check out this gist for URL parser hack: 
+						// https://gist.github.com/jlong/2428561
+						var $el = jq("<a></a>").attr("href", url);
+						this.el = $el.get(0);
+						this.parser = this.el;
+					}
+					/**
+					 * 获取URL中的请求特定的请求参数
+					 *
+					 * @param {String} key - 需要查询的参数的键
+					 * @return {String|Null} - 返回值，不存在则为null
+					 */
+				URLParser.prototype.getParam = function(key) {
+					var KEY_REG = new RegExp("([\?&])" + key + "=([^&#]*)([&#])?");
+					var result = this.el.search.match(KEY_REG);
+					return result ? result[2] : null;
+				};
+				loadDataAndInit();
+			})();
+		</script>
+
+	</body>
+
+</html>

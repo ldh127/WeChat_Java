@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta charset="utf-8">
+
+		<script type="text/javascript">
+			 //上报测速 --初始点
+			window._points = [+new Date()];
+			 //上报测速 --js加载完成点,通过编译工具加在seajs.use回调中
+			function wx_main(mod) {
+				window._points && (window._points[3] = +new Date());
+			};
+		</script>
+		<title>微信公众平台</title>
+		<link href="../img/logo.ico" rel="Shortcut Icon">
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/layout_head.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/base.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/lib.css" />
+		<link rel="stylesheet" href="../css/mana_file_new.css" />
+
+	</head>
+
+	<body class="zh_CN">
+		<div class="head" id="header">
+			<script type="text/javascript">
+				 //上报测速 --css加载完成点
+				window._points && (window._points[1] = +new Date());
+			</script>
+			<div class="head_box">
+				<div class="inner wrp">
+					<h1 class="logo"><a href="/" title="微信公众平台"></a></h1>
+					<div class="account">
+						<div class="account_meta account_info account_meta_primary">
+							<a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN" class="nickname">永远的遗书</a>
+							<span class="type_wrp">
+
+                                        <a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN" class="type icon_subscribe_label">订阅号</a>
+
+                                        
+
+                                        <a href="/merchant/store?action=detail&t=wxverify/detail&info=verify&lang=zh_CN&token=938922762" class="type icon_verify_label fail">未认证</a>
+
+                                        
+
+                </span>
+							<a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN">
+								<img src="../img/ourself.jpg" class="avatar">
+							</a>
+						</div>
+						<div id="accountArea" class="account_meta account_inbox account_meta_primary">
+							<a href="/cgi-bin/frame?t=notification/index_frame&lang=zh_CN&token=938922762" class="account_inbox_switch">
+								<i class="icon_inbox">通知</i>&nbsp;
+							</a>
+						</div>
+						<div class="account_meta account_logout account_meta_primary"><a id="logout" href="/cgi-bin/logout?t=wxm-logout&lang=zh_CN&token=938922762">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="body" class="body page_appmsg_edit">
+			<div id="js_container_box" class="container_box cell_layout side_l">
+
+				<div class="col_side">
+					<div class="menu_box" id="menuBar">
+						<dl class="menu no_extra">
+							<dt class="menu_title">
+
+        <i class="icon_menu" style="background:url(../img/icon_menu_function.png) no-repeat;">
+
+    </i>功能
+
+            </dt>
+
+							<dd class="menu_item "><a data-id="10005" href="/cgi-bin/masssendpage?t=mass/send&token=938922762&lang=zh_CN">群发功能</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10006" href="/advanced/autoreply?t=ivr/reply&action=beadded&token=938922762&lang=zh_CN">自动回复</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10007" href="/advanced/selfmenu?action=index&t=advanced/menu-setting&token=938922762&lang=zh_CN">自定义菜单</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+
+        <i class="icon_menu" style="background:url(../img/icon_menu_management.png) no-repeat;">
+
+    </i>管理
+
+            </dt>
+
+							<dd class="menu_item "><a data-id="10012" href="/cgi-bin/message?t=message/list&count=20&day=7&token=938922762&lang=zh_CN">消息管理</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10013" href="/cgi-bin/contactmanage?t=user/index&pageidx=0&type=0&token=938922762&lang=zh_CN">用户管理</a>
+							</dd>
+							<dd class="menu_item selected"><a data-id="10014" href="/cgi-bin/appmsg?begin=0&count=10&t=media/appmsg_list&type=11&action=list&token=938922762&lang=zh_CN">素材管理</a>
+							</dd>
+						</dl>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+
+        <i class="icon_menu" style="background:url(
+
+        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_setup.png
+
+        ) no-repeat;">
+
+    </i>设置
+
+            </dt>
+
+							<dd class="menu_item "><a data-id="10019" href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN">公众号设置</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10022" href="/cgi-bin/safecenterstatus?action=view&t=setting/safe-index&token=938922762&lang=zh_CN">安全中心</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title clickable">
+
+        <a href="/advanced/advanced?action=dev&t=advanced/dev&token=938922762&lang=zh_CN">
+
+        <i class="icon_menu" style="background:url(../img/icon_menu_developer.png) no-repeat;">
+
+    </i>开发者中心
+
+    </a>        </dt>
+
+						</dl>
+					</div>
+
+				</div>
+
+				<div class="col_main">
+
+					<div class="main_hd">
+						<h2>素材管理</h2>
+						<div class="title_tab" id="topTab"></div>
+						<div class="page_nav">
+							<a href="/cgi-bin/appmsg?begin=0&count=10&t=media/appmsg_list&type=10&action=list_card&token=938922762&lang=zh_CN" class="icon_goback">返回上一层</a> <a href="/cgi-bin/appmsg?begin=0&count=10&t=media/appmsg_list&type=10&action=list_card&token=938922762&lang=zh_CN">图文消息</a>							&#47; 新建图文消息 </div>
+					</div>
+					<div class="main_bd">
+						<div class="media_preview_area">
+
+							<div class="appmsg multi editing">
+								<div id="js_appmsg_preview" class="appmsg_content">
+									<div id="appmsgItem1" data-fileid="" data-id="1" class="first_appmsg_item js_appmsg_item ">
+										<!-- 
+        <div class="appmsg_info">
+            <em class="appmsg_date"></em>
+        </div>
+        <div class="cover_appmsg_item">
+            <h4 class="appmsg_title"><a href="javascript:void(0);" onclick="return false;" target="_blank">标题</a></h4>
+            <div class="appmsg_thumb_wrp">
+                <img class="js_appmsg_thumb appmsg_thumb" src="">
+                <i class="appmsg_thumb default">封面图片</i>
+            </div>
+            <div class="appmsg_edit_mask">
+                <a onclick="return false;" class="icon18_common edit_gray js_edit" data-id="1" href="javascript:;">编辑</a>
+            </div>
+        </div>
+     -->
+										<div class="cover_appmsg_item">
+											<h4 class="appmsg_title"><a href="javascript:void(0);" onclick="return false;" target="_blank">标题</a></h4>
+											<div class="appmsg_thumb_wrp">
+												<img class="js_appmsg_thumb appmsg_thumb" src="">
+												<i class="appmsg_thumb default">封面图片</i>
+											</div>
+										</div>
+
+										<!--<div class="appmsg_info">
+            <em class="appmsg_date"></em>
+        </div>-->
+
+										<div class="appmsg_edit_mask">
+											<a onclick="return false;" class="icon18_common edit_gray js_edit" data-id="1" href="javascript:;">编辑</a>
+										</div>
+										<!--<p class="appmsg_desc"></p>-->
+									</div>
+									<div id="appmsgItem2" data-fileid="" data-id="2" class="appmsg_item js_appmsg_item ">
+										<img class="js_appmsg_thumb appmsg_thumb" src="">
+										<i class="appmsg_thumb default">缩略图</i>
+										<h4 class="appmsg_title"><a onclick="return false;" href="javascript:void(0);" target="_blank">标题</a></h4>
+										<div class="appmsg_edit_mask">
+											<a class="icon18_common edit_gray js_edit" data-id="2" onclick="return false;" href="javascript:void(0);">编辑</a>
+											<a class="icon18_common del_gray js_del" data-id="2" onclick="return false;" href="javascript:void(0);">删除</a>
+										</div>
+									</div>
+									<div id="appmsgItem3" data-fileid="" data-id="3" class="appmsg_item js_appmsg_item ">
+										<img class="js_appmsg_thumb appmsg_thumb" src="">
+										<i class="appmsg_thumb default">缩略图</i>
+										<h4 class="appmsg_title"><a onclick="return false;" href="javascript:void(0);" target="_blank">标题</a></h4>
+										<div class="appmsg_edit_mask">
+											<a class="icon18_common edit_gray js_edit" data-id="3" onclick="return false;" href="javascript:void(0);">编辑</a>
+											<a class="icon18_common del_gray js_del" data-id="3" onclick="return false;" href="javascript:void(0);">删除</a>
+										</div>
+									</div>
+								</div>
+								<a onclick="return false;" class="create_access_primary appmsg_add" id="js_add_appmsg" href="javascript:void(0);">
+									<i class="icon20_common add_gray">增加一条</i>
+								</a>
+							</div>
+						</div>
+						<div class="media_edit_area">
+							<div id="js_appmsg_editor">
+								<div class="appmsg_editor" style="margin-top: 0px;">
+									<div class="inner">
+										<div class="appmsg_edit_item">
+											<label for="" class="frm_label">标题</label>
+											<span class="frm_input_box with_counter counter_in append count">
+                <input type="text" class="frm_input js_title js_counter" max-length="64">
+                <em class="frm_input_append frm_counter">0/64</em>
+            </span>
+											<div class="frm_msg fail js_title_error" style="display: none;">标题不能为空且长度不能超过64字</div>
+										</div>
+										<div class="appmsg_edit_item">
+											<label for="" class="frm_label">
+												<strong class="title">作者</strong>
+												<p class="tips l">（选填）</p>
+											</label>
+											<span class="frm_input_box with_counter counter_in append count">
+                <input type="text" class="frm_input js_author js_counter" max-length="8">
+                <em class="frm_input_append frm_counter">0/8</em>
+            </span>
+											<div class="frm_msg fail js_author_error" style="display: none;">作者不能超过8个字</div>
+										</div>
+										<div class="appmsg_edit_item">
+											<label for="" class="frm_label">
+												<strong class="title">封面</strong>
+												<p class="js_cover_tip tips">（大图片建议尺寸：900像素 * 500像素）</p>
+											</label>
+											<!--<div class="upload_wrap">
+                <div class="upload_box">
+                    <div class="upload_area">
+                        <a id="js_appmsg_upload_cover" href="javascript:void(0);" onclick="return false;" class="btn btn_upload">
+                            上传                        </a>
+                    </div>
+                </div>&nbsp;
+                <p class="js_cover upload_preview">
+					<a class="js_removeCover" href="javascript:void(0);" onclick="return false;">删除</a>
+                </p>
+			</div>
+            <a id="js_imagedialog" href="javascript:void(0);" onclick="return false;" class="btn btn_upload">从图片库选择</a>-->
+											<div class="upload_wrap">
+												<div class="upload_box">
+													<div class="upload_area webuploader-container">
+														<a id="js_appmsg_upload_cover" href="javascript:void(0);" onclick="return false;" class="btn btn_upload webuploader-pick">
+                            上传                        </a>
+														<ul class="upload_file_box" style="display:none"></ul>
+														<div id="rt_rt_19pd0vo6eg0db9c10k633f1lcq1" style="position: absolute; top: 0px; left: 0px; width: 106px; height: 32px; overflow: hidden; bottom: auto; right: auto;">
+															<input type="file" accept="image/*" style="display: none;">
+															<label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+														</div>
+													</div>
+												</div>&nbsp;&nbsp;<a id="js_imagedialog" href="javascript:void(0);" onclick="return false;" class="btn btn_upload">从图片库选择</a>
+												<p class="js_cover upload_preview" style="display: none;">
+													<a class="js_removeCover" href="javascript:void(0);" onclick="return false;">删除</a>
+												</p>
+											</div>
+
+											<p class="frm_tips">
+												<label for="" class="frm_checkbox_label js_show_cover_pic selected">
+													<i class="icon_checkbox"></i>
+													<input type="checkbox" class="frm_checkbox" checked=""> 封面图片显示在正文中
+												</label>
+											</p>
+											<div class="frm_msg fail js_cover_error" style="display: none;">必须插入一张图片</div>
+										</div>
+
+										<!--
+		<p><a class="js_addDesc" href="javascript:void(0);" onclick="return false;">添加摘要</a></p>
+        -->
+										<div class="js_desc_area appmsg_edit_item align_counter" style="display: block;">
+											<label for="" class="frm_label">
+												<strong class="title">摘要</strong>
+												<p class="tips l">（选填，该摘要只在发送图文消息为单条时显示）</p>
+											</label>
+											<span class="frm_textarea_box with_counter counter_out counter_in append count">
+                <textarea class="frm_textarea js_desc js_counter" max-length="120"></textarea>
+                <em class="frm_input_append frm_counter">0/120</em>
+            </span>
+											<div class="frm_msg fail js_desc_error" style="display: none;"></div>
+										</div>
+										<div id="js_ueditor" class="appmsg_edit_item content_edit">
+											<label for="" class="frm_label">
+												<strong class="title">正文</strong>
+												<p class="tips l">
+													<em id="js_auto_tips">（已载入2015-07-04 23:51:07的草稿）</em>
+													<a id="js_cancle" style="" href="javascript:void(0);" onclick="return false;">取消</a>
+												</p>
+											</label>
+											<div class="frm_msg fail js_catch_tips" style="display: none;">有5张图片粘贴失败</div>
+											<div class="frm_msg fail js_content_error" style="display: none;">正文不能为空且长度不能超过20000字</div>
+											<div id="js_editor" class="edui_editor_wrp edui-default">
+
+												<div id="edui1" class="edui-editor  edui-default" style="z-index: 999;">
+													<div id="edui1_toolbarbox" class="edui-editor-toolbarbox show-edui-more edui-default">
+														<div id="edui1_toolbarboxouter" class="edui-editor-toolbarboxouter edui-default">
+															<div class="edui-editor-toolbarboxinner edui-default">
+																<div id="js_toolbar_0" class="edui-toolbar  edui-toolbar-primary edui-default" onselectstart="return false;" onmousedown="return $EDITORUI[&quot;js_toolbar_0&quot;]._onMouseDown(event, this);" style="-webkit-user-select: none;">
+																	<div id="edui2" class="edui-box edui-button edui-for-more edui-default">
+																		<div id="edui2_state" onmousedown="$EDITORUI[&quot;edui2&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui2&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui2&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui2&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui2_body" unselectable="on" data-tooltip="更多" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui2&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui3" class="edui-box edui-separator  edui-default"></div>
+																	<div id="edui4" class="edui-box edui-combox edui-for-fontsize edui-default">
+																		<div data-tooltip="字号" id="edui4_state" onmousedown="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui4&quot;].Stateful_onMouseOut(event, this);" class="js_tooltip edui-default">
+																			<div class="edui-combox-body edui-default">
+																				<div id="edui4_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui4&quot;]._onButtonClick(event, this);">16px</div>
+																				<div class="edui-box edui-splitborder edui-default"></div>
+																				<div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui4&quot;]._onArrowClick();"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui15" class="edui-box edui-separator  edui-default"></div>
+																	<div id="edui16" class="edui-box edui-button edui-for-blockquote edui-default">
+																		<div id="edui16_state" onmousedown="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui16&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui16_body" unselectable="on" data-tooltip="引用" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui16&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui17" class="edui-box edui-button edui-for-horizontal edui-default">
+																		<div id="edui17_state" onmousedown="$EDITORUI[&quot;edui17&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui17&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui17&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui17&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui17_body" unselectable="on" data-tooltip="分隔线" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui17&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui18" class="edui-box edui-separator  edui-default"></div>
+																	<div id="edui19" class="edui-box edui-button edui-for-removeformat edui-default">
+																		<div id="edui19_state" onmousedown="$EDITORUI[&quot;edui19&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui19&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui19&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui19&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui19_body" unselectable="on" data-tooltip="清除格式" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui19&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui20" class="edui-box edui-separator  edui-default"></div>
+																	<div id="edui21" class="edui-box edui-separator  edui-default"></div>
+																	<div id="edui22" class="edui-box edui-button edui-for-insertvideo2 edui-default">
+																		<div id="edui22_state" onmousedown="$EDITORUI[&quot;edui22&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui22&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui22&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui22&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui22_body" unselectable="on" data-tooltip="视频" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui22&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div class="edui-box edui-label edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui23" class="edui-box edui-button edui-for-insertimage edui-default">
+																		<div id="edui23_state" onmousedown="$EDITORUI[&quot;edui23&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui23&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui23&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui23&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui23_body" unselectable="on" data-tooltip="图片" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui23&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div class="edui-box edui-label edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui24" class="edui-box edui-button edui-for-insertvote edui-default">
+																		<div id="edui24_state" onmousedown="$EDITORUI[&quot;edui24&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui24&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui24&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui24&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui24_body" unselectable="on" data-tooltip="投票" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui24&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui25" class="edui-box edui-button edui-for-insertaudio edui-default">
+																		<div id="edui25_state" onmousedown="$EDITORUI[&quot;edui25&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui25&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui25&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui25&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui25_body" unselectable="on" data-tooltip="背景音乐" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui25&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div><a id="js_zoomout" href="javascript:;" onclick="return false;" class="icon_edui_zoom zoom_out_switch js_tooltip" data-tooltip="全屏模式">全屏</a><a id="js_zoomin" href="javascript:;" onclick="return false;" class="icon_edui_zoom zoom_in_switch  js_tooltip"
+																	data-tooltip="缩小">还原</a>
+																</div>
+																<div id="js_toolbar_1" class="edui-toolbar  edui-toobar-secondary edui-default" onselectstart="return false;" onmousedown="return $EDITORUI[&quot;js_toolbar_1&quot;]._onMouseDown(event, this);" style="-webkit-user-select: none;">
+																	<div id="edui27" class="edui-box edui-button edui-for-bold edui-default">
+																		<div id="edui27_state" onmousedown="$EDITORUI[&quot;edui27&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui27&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui27&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui27&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui27_body" unselectable="on" data-tooltip="加粗" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui27&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui28" class="edui-box edui-button edui-for-italic edui-default">
+																		<div id="edui28_state" onmousedown="$EDITORUI[&quot;edui28&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui28&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui28&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui28&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui28_body" unselectable="on" data-tooltip="斜体" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui28&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui29" class="edui-box edui-button edui-for-underline edui-default">
+																		<div id="edui29_state" onmousedown="$EDITORUI[&quot;edui29&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui29&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui29&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui29&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui29_body" unselectable="on" data-tooltip="下划线" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui29&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui30" class="edui-box edui-splitbutton edui-for-forecolor edui-default edui-colorbutton">
+																		<div data-tooltip="字体颜色" id="edui30_state" onmousedown="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui30&quot;].Stateful_onMouseOut(event, this);" class="js_tooltip edui-default">
+																			<div class="edui-splitbutton-body edui-default">
+																				<div id="edui30_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui30&quot;]._onButtonClick(event, this);">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div id="edui30_colorlump" class="edui-colorlump"></div>
+																				</div>
+																				<div class="edui-box edui-splitborder edui-default"></div>
+																				<div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui30&quot;]._onArrowClick();"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui33" class="edui-box edui-splitbutton edui-for-backcolor edui-default edui-colorbutton">
+																		<div data-tooltip="背景色" id="edui33_state" onmousedown="$EDITORUI[&quot;edui33&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui33&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui33&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui33&quot;].Stateful_onMouseOut(event, this);" class="js_tooltip edui-default">
+																			<div class="edui-splitbutton-body edui-default">
+																				<div id="edui33_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui33&quot;]._onButtonClick(event, this);">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div id="edui33_colorlump" class="edui-colorlump"></div>
+																				</div>
+																				<div class="edui-box edui-splitborder edui-default"></div>
+																				<div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui33&quot;]._onArrowClick();"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui36" class="edui-box edui-separator  edui-default"></div>
+																	<div id="edui37" class="edui-box edui-button edui-for-justifyleft edui-default">
+																		<div id="edui37_state" onmousedown="$EDITORUI[&quot;edui37&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui37&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui37&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui37&quot;].Stateful_onMouseOut(event, this);" class=" edui-default edui-state-checked">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui37_body" unselectable="on" data-tooltip="居左对齐" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui37&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div class="edui-box edui-label edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui38" class="edui-box edui-button edui-for-justifycenter edui-default">
+																		<div id="edui38_state" onmousedown="$EDITORUI[&quot;edui38&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui38&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui38&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui38&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui38_body" unselectable="on" data-tooltip="居中对齐" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui38&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div class="edui-box edui-label edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui39" class="edui-box edui-button edui-for-justifyright edui-default">
+																		<div id="edui39_state" onmousedown="$EDITORUI[&quot;edui39&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui39&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui39&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui39&quot;].Stateful_onMouseOut(event, this);" class=" edui-default">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui39_body" unselectable="on" data-tooltip="居右对齐" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui39&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div class="edui-box edui-label edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui40" class="edui-box edui-separator  edui-default"></div>
+																	<div id="edui41" class="edui-box edui-menubutton edui-for-rowspacingtop edui-default">
+																		<div data-tooltip="段前距" id="edui41_state" onmousedown="$EDITORUI[&quot;edui41&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui41&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui41&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui41&quot;].Stateful_onMouseOut(event, this);" class="js_tooltip edui-default">
+																			<div class="edui-menubutton-body edui-default">
+																				<div id="edui41_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui41&quot;]._onButtonClick(event, this);">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																				<div class="edui-box edui-splitborder edui-default"></div>
+																				<div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui41&quot;]._onArrowClick();"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui48" class="edui-box edui-menubutton edui-for-rowspacingbottom edui-default">
+																		<div data-tooltip="段后距" id="edui48_state" onmousedown="$EDITORUI[&quot;edui48&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui48&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui48&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui48&quot;].Stateful_onMouseOut(event, this);" class="js_tooltip edui-default">
+																			<div class="edui-menubutton-body edui-default">
+																				<div id="edui48_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui48&quot;]._onButtonClick(event, this);">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																				<div class="edui-box edui-splitborder edui-default"></div>
+																				<div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui48&quot;]._onArrowClick();"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui55" class="edui-box edui-menubutton edui-for-lineheight edui-default">
+																		<div data-tooltip="行间距" id="edui55_state" onmousedown="$EDITORUI[&quot;edui55&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui55&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui55&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui55&quot;].Stateful_onMouseOut(event, this);" class="js_tooltip edui-default">
+																			<div class="edui-menubutton-body edui-default">
+																				<div id="edui55_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui55&quot;]._onButtonClick(event, this);">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																				<div class="edui-box edui-splitborder edui-default"></div>
+																				<div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui55&quot;]._onArrowClick();"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui64" class="edui-box edui-separator  edui-default"></div>
+																	<div id="edui65" class="edui-box edui-menubutton edui-for-insertorderedlist edui-default">
+																		<div data-tooltip="有序列表" id="edui65_state" onmousedown="$EDITORUI[&quot;edui65&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui65&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui65&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui65&quot;].Stateful_onMouseOut(event, this);" class="js_tooltip edui-default">
+																			<div class="edui-menubutton-body edui-default">
+																				<div id="edui65_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui65&quot;]._onButtonClick(event, this);">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																				<div class="edui-box edui-splitborder edui-default"></div>
+																				<div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui65&quot;]._onArrowClick();"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui72" class="edui-box edui-menubutton edui-for-insertunorderedlist edui-default">
+																		<div data-tooltip="无序列表" id="edui72_state" onmousedown="$EDITORUI[&quot;edui72&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui72&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui72&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui72&quot;].Stateful_onMouseOut(event, this);" class="js_tooltip edui-default">
+																			<div class="edui-menubutton-body edui-default">
+																				<div id="edui72_button_body" class="edui-box edui-button-body edui-default" onclick="$EDITORUI[&quot;edui72&quot;]._onButtonClick(event, this);">
+																					<div class="edui-box edui-icon edui-default"></div>
+																				</div>
+																				<div class="edui-box edui-splitborder edui-default"></div>
+																				<div class="edui-box edui-arrow edui-default" onclick="$EDITORUI[&quot;edui72&quot;]._onArrowClick();"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui77" class="edui-box edui-separator  edui-default"></div>
+																	<div id="edui78" class="edui-box edui-button edui-for-imagenone edui-default">
+																		<div id="edui78_state" onmousedown="$EDITORUI[&quot;edui78&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui78&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui78&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui78&quot;].Stateful_onMouseOut(event, this);" class=" edui-default edui-state-disabled">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui78_body" unselectable="on" data-tooltip="默认" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui78&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div class="edui-box edui-label edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui79" class="edui-box edui-button edui-for-imageleft edui-default">
+																		<div id="edui79_state" onmousedown="$EDITORUI[&quot;edui79&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui79&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui79&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui79&quot;].Stateful_onMouseOut(event, this);" class=" edui-default edui-state-disabled">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui79_body" unselectable="on" data-tooltip="左浮动" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui79&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div class="edui-box edui-label edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui80" class="edui-box edui-button edui-for-imageright edui-default">
+																		<div id="edui80_state" onmousedown="$EDITORUI[&quot;edui80&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui80&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui80&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui80&quot;].Stateful_onMouseOut(event, this);" class=" edui-default edui-state-disabled">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui80_body" unselectable="on" data-tooltip="右浮动" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui80&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div class="edui-box edui-label edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div id="edui81" class="edui-box edui-button edui-for-imagecenter edui-default">
+																		<div id="edui81_state" onmousedown="$EDITORUI[&quot;edui81&quot;].Stateful_onMouseDown(event, this);" onmouseup="$EDITORUI[&quot;edui81&quot;].Stateful_onMouseUp(event, this);" onmouseover="$EDITORUI[&quot;edui81&quot;].Stateful_onMouseOver(event, this);"
+																		onmouseout="$EDITORUI[&quot;edui81&quot;].Stateful_onMouseOut(event, this);" class=" edui-default edui-state-disabled">
+																			<div class="edui-button-wrap edui-default">
+																				<div id="edui81_body" unselectable="on" data-tooltip="居中" class="edui-button-body js_tooltip edui-default" onmousedown="return false;" onclick="return $EDITORUI[&quot;edui81&quot;]._onClick();">
+																					<div class="edui-box edui-icon edui-default"></div>
+																					<div class="edui-box edui-label edui-default"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div id="edui1_toolbarmsg" class="edui-editor-toolbarmsg edui-default" style="display:none;">
+															<div id="edui1_upload_dialog" class="edui-editor-toolbarmsg-upload edui-default" onclick="$EDITORUI[&quot;edui1&quot;].showWordImageDialog();">点击上传</div>
+															<div class="edui-editor-toolbarmsg-close edui-default" onclick="$EDITORUI[&quot;edui1&quot;].hideToolbarMsg();">x</div>
+															<div id="edui1_toolbarmsg_label" class="edui-editor-toolbarmsg-label edui-default"></div>
+															<div style="height:0;overflow:hidden;clear:both;" class=" edui-default"></div>
+														</div>
+													</div>
+													<div id="edui1_iframeholder" class="edui-editor-iframeholder edui-default" style="height: 440px;">
+														<iframe id="ueditor_0" width="100%" height="100%" frameborder="0" src="javascript:void(function(){document.open();document.domain=&quot;qq.com&quot;;document.write(&quot;<!DOCTYPE html><html xmlns='http://www.w3.org/1999/xhtml' ><head><style type='text/css'>body{font-family:sans-serif;font-size:16px;}p{margin:5px 0;}</style><link rel='stylesheet' type='text/css' href='https://res.wx.qq.com/mpres/htmledition/ueditor/themes/iframe264f37.css'/></head><body class='view' ></body><script type='text/javascript'  id='_initialScript'>setTimeout(function(){window.parent.UE.instants['ueditorInstant0']._setup(document);},0);var _tmpScript = document.getElementById('_initialScript');_tmpScript.parentNode.removeChild(_tmpScript);</script></html>&quot;);document.close();}())"></iframe>
+													</div>
+													<div id="edui1_bottombar" class="edui-editor-bottomContainer edui-default">
+														<table class=" edui-default">
+															<tbody class=" edui-default">
+																<tr class=" edui-default">
+																	<td id="edui1_elementpath" class="edui-editor-bottombar edui-default" style="display: none;"></td>
+																	<td id="edui1_wordcount" class="edui-editor-wordcount edui-default" style="display: none;"></td>
+																	<td id="edui1_scale" class="edui-editor-scale edui-default" style="display: none;">
+																		<div class="edui-editor-icon edui-default"></div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+													<div id="edui1_scalelayer" class=" edui-default"></div>
+												</div>
+											</div>
+										</div>
+										<!--
+		<p><a class="js_addURL" href="javascript:void(0);" onclick="return false;">添加原文链接</a></p>
+        -->
+										<div class="js_url_area appmsg_edit_item">
+											<label for="" class="frm_label">
+												<strong class="title">原文链接</strong>
+												<p class="tips l">（选填）</p>
+											</label>
+											<span class="frm_input_box"><input type="text" class="js_url frm_input"></span>
+											<div class="frm_msg fail js_url_error" style="display: none;">链接不合法</div>
+										</div>
+
+										<!--
+        <div class="appmsg_edit_item" style="display:none;">
+            <label for="" class="frm_label">
+                <strong class="title">来源和作者</strong>
+                <p class="tips mini_tips icon_after gap_left">
+                    文章不申明来源，系统可能会给文章自动注明出处                    <i class="icon_msg_mini ask" id="js_original_desc"></i>
+                </p>
+            </label>
+            <p>
+                <label class="frm_radio_label">
+                    <i class="icon_radio"></i>
+                    <span class="lbl_content">不申明来源</span>
+                    <input type="radio" name="" class="js_original_type frm_radio" value="0">
+                </label>
+                <label class="frm_radio_label">
+                    <i class="icon_radio"></i>
+                    <span class="lbl_content">原创</span>
+                    <input type="radio" name="" class="js_original_type frm_radio" value="1">
+                </label>
+                <label class="frm_radio_label">
+                    <i class="icon_radio"></i>
+                    <span class="lbl_content">转载</span>
+                    <input type="radio" name="" class="js_original_type frm_radio" value="2">
+                </label>
+            </p>
+        </div>
+        <div class="original_edit_box js_original" style="display:none;">
+            <div class="frm_control_group frm_control_block">
+                <label class="frm_label" for="">作者</label>
+                <div class="frm_controls">
+                    <span class="frm_input_box with_counter counter_in append">
+                        <input type="text" class="frm_input js_counter js_author">
+                        <em class="frm_input_append frm_counter">0/8</em>
+                    </span>
+                    <div class="frm_msg fail js_author_error" style="display:none;">作者不能为空且不超过8个字</div>
+                </div>
+            </div>
+            <div class="frm_control_group frm_control_block">
+                <label class="frm_label" for="">原文链接</label>
+                <div class="frm_controls">
+                    <span class="frm_input_box"><input class="frm_input js_url" type="text"></span>
+                    <div class="frm_msg fail js_url_error" style="display:none;">链接不合法</div>
+                </div>
+            </div>
+        </div>
+        <div class="original_edit_box js_original" style="display:none;">
+            <div class="frm_control_group">
+                <label class="frm_label" for="">公众平台首发</label>
+                <div class="frm_controls frm_vertical_pt">
+                    <label class="frm_radio_label">
+                        <i class="icon_radio"></i>
+                        <span class="lbl_content">是</span>
+                        <input type="radio" name="" class="js_original_publish frm_radio" value="0" checked>
+                    </label>
+                    <label class="frm_radio_label">
+                        <i class="icon_radio"></i>
+                        <span class="lbl_content">否</span>
+                        <input type="radio" name="" class="js_original_publish frm_radio" value="1">
+                    </label>
+                </div>
+            </div>
+            <div class="original_edit_inner_box js_original_inner">
+                <div class="frm_control_group frm_control_block">
+                    <label class="frm_label" for="">作者</label>
+                    <div class="frm_controls">
+                        <span class="frm_input_box with_counter counter_in append">
+                            <input type="text" class="frm_input js_counter js_author">
+                            <em class="frm_input_append frm_counter">0/8</em>
+                        </span>
+                        <div class="frm_msg fail js_author_error" style="display:none;">作者不能为空且不超过8个字</div>
+                    </div>
+                </div>
+            </div>
+            <div class="original_edit_inner_box js_original_inner" style="display:none;">
+                <div class="frm_control_group frm_control_block">
+                    <label class="frm_label" for="">本文链接</label>
+                    <div class="frm_controls">
+                        <span class="frm_input_box"><input class="frm_input js_url" placeholder="该文章在其它网站的地址" type="text"></span>
+                        <div class="frm_msg fail js_url_error" style="display:none;">链接不合法</div>
+                    </div>
+                </div>
+                <div class="frm_control_group frm_control_block">
+                    <label class="frm_label" for="">平台名称</label>
+                    <div class="frm_controls ">
+                        <span class="frm_input_box with_counter counter_in append">
+                            <input placeholder="该网站的名称" type="text" class="frm_input js_counter js_platform">
+                            <em class="frm_input_append frm_counter">0/10</em>
+                        </span>
+                        <div class="frm_msg fail js_platform_error" style="display:none;"></div>
+                    </div>
+                </div>
+                <div class="frm_control_group frm_control_block">
+                    <label class="frm_label" for="">作者</label>
+                    <div class="frm_controls">
+                        <span class="frm_input_box with_counter counter_in append">
+                            <input type="text" class="frm_input js_counter js_author">
+                            <em class="frm_input_append frm_counter">0/8</em>
+                        </span>
+                        <div class="frm_msg fail js_author_error" style="display:none;">作者不能为空且不超过8个字</div>
+                    </div>
+                </div>
+                <div class="frm_control_group">
+                    <label class="frm_label" for="">发表时间</label>
+                    <div class="frm_controls frm_vertical_pt">
+                        <span class="btn datepicker_switch">
+                            <input type="text" class="frm_input" style="ime-mode:disabled" onpaste="return false" id="js_original_date">
+                            <i class="icon_datepicker"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="original_edit_box js_original" style="display:none;">
+            <div class="frm_control_group frm_control_block">
+                <label class="frm_label" for="">原文链接</label>
+                <div class="frm_controls">
+                    <span class="frm_input_box"><input class="frm_input js_url" placeholder="该转载文章的源地址" type="text"></span>
+                    <div class="frm_msg fail js_url_error" style="display:none;">链接不合法</div>
+                </div>
+            </div>
+            <div class="frm_control_group frm_control_block">
+                <label class="frm_label" for="">转载出处</label>
+                <div class="frm_controls ">
+                    <span class="frm_input_box with_counter counter_in append test">
+                        <input placeholder="原文发表的网站名" type="text" class="frm_input js_counter js_platform">
+                        <em class="frm_input_append frm_counter">0/10</em>
+                    </span>
+                    <div class="frm_msg fail js_platform_error" style="display:none;"></div>
+                </div>
+            </div>
+            <div class="frm_control_group frm_control_block">
+                <label class="frm_label" for="">作者</label>
+                <div class="frm_controls">
+                    <span class="frm_input_box with_counter counter_in append test">
+                        <input type="text" class="frm_input js_counter js_author">
+                        <em class="frm_input_append frm_counter">0/8</em>
+                    </span>
+                    <div class="frm_msg fail js_author_error" style="display:none;">作者不能为空且不超过8个字</div>
+                </div>
+            </div>
+
+        </div>
+        -->
+									</div>
+									<i class="arrow arrow_out" style="margin-top: 0px;"></i>
+									<i class="arrow arrow_in" style="margin-top: 0px;"></i>
+									<div class="mask" style="display: none;">
+										<div style="position: relative; left: 711px; top: 370px;">
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -1s infinite; animation-timing-function: linear; animation-delay: -1s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(0deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.916666666666667s infinite; animation-timing-function: linear; animation-delay: -0.916666666666667s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(30deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.833333333333333s infinite; animation-timing-function: linear; animation-delay: -0.833333333333333s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(60deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.75s infinite; animation-timing-function: linear; animation-delay: -0.75s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(90deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.666666666666667s infinite; animation-timing-function: linear; animation-delay: -0.666666666666667s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(120deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.583333333333333s infinite; animation-timing-function: linear; animation-delay: -0.583333333333333s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(150deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.5s infinite; animation-timing-function: linear; animation-delay: -0.5s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(180deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.416666666666667s infinite; animation-timing-function: linear; animation-delay: -0.416666666666667s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(210deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.333333333333333s infinite; animation-timing-function: linear; animation-delay: -0.333333333333333s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(240deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.25s infinite; animation-timing-function: linear; animation-delay: -0.25s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(270deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.166666666666667s infinite; animation-timing-function: linear; animation-delay: -0.166666666666667s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(300deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+											<div style="position: absolute; top: -2px; transform: translate3d(0px, 0px, 0px); animation-duration: 1s; -webkit-animation: opacity-100-25 1s linear -0.0833333333333334s infinite; animation-timing-function: linear; animation-delay: -0.0833333333333334s; animation-iteration-count: infinite; animation-direction: initial; animation-fill-mode: initial; animation-play-state: initial; -webkit-animation-play-state: initial; animation-name: opacity-100-25;">
+												<div style="position: absolute; width: 12px; height: 5px; box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; transform-origin: left 50% 0px; transform: rotate(330deg) translate(10px, 0px); border-radius: 100em; background: rgb(34, 34, 34);"></div>
+											</div>
+										</div>
+									</div>
+									<p class="editor_extra_info mini_tips icon_after" id="js_editor_extra_info">
+										<a target="_blank" href="/cgi-bin/settingpage?t=setting/function&amp;action=function&amp;set_water=1&amp;lang=zh_CN&amp;token=938922762" class=" page_assist_link">修改图片水印 <i class="icon_mini_tips document_link"></i></a>
+									</p>
+								</div>
+							</div>
+							<p class="frm_tips">编辑好的图文消息，需要点击“保存并群发”才能发送到关注者手机上。</p>
+
+						</div>
+						<div class="tool_area">
+							<div class="tool_bar border tc">
+								<span id="js_submit" class="btn btn_input btn_primary"><button>保存</button></span>
+								<span id="js_preview" class="btn btn_input btn_default"><button>预览</button></span>
+								<span id="js_send" class="btn btn_input btn_default"><button>保存并群发</button></span>
+							</div>
+						</div>
+
+					</div>
+					<div class="dialog_wrp link_dialog" id="linkPop" style="width: 726px; display: none; ">
+						<div class="dialog">
+							<div class="dialog_hd">
+								<h3>新增或编辑超链接</h3>
+								<a href="javascript:;" onclick="return false" class="icon16_opr closed pop_closed jsLinkClose">关闭</a>
+							</div>
+							<form class="dialog_bd" id="linkForm">
+								<div class="frm_control_group">
+									<label for="" class="frm_label">文本内容</label>
+									<div class="frm_controls">
+										<span class="frm_input_box">
+
+                        <input type="text" id="txtTitle" name="title" class="frm_input" placeholder="请填写被点击的文字内容">
+
+                    </span>
+
+									</div>
+								</div>
+								<div class="frm_control_group dn" id="hrefDiv">
+									<label for="" class="frm_label">链接地址</label>
+									<div class="frm_controls">
+										<span class="frm_input_box">
+
+                        <input type="text" id="txtHref" name="href" class="frm_input" placeholder="" value="http://">
+
+                    </span>
+
+									</div>
+								</div>
+								<div class="link_chooser_wrap">
+									<p>从已发送的图文消息中选择</p>
+									<div class="link_chooser dn" id="linkChoose">
+										<div class="search_bar">
+											<span class="frm_input_box search with_del append">
+
+                            <a class="del_btn" href="###" id="searchCloseBt"><i class="icon_search_del" id="searchCloseBt"></i>&nbsp;</a>
+
+                            <a id="searchBt" href="###" class="frm_input_append"><i class="icon16_common search_gray">搜索</i>&nbsp;</a>
+
+                            <input id="keyInput" type="text" placeholder="搜索相关文章" value="" class="frm_input">
+
+                        </span>
+										</div>
+										<ul class="my_link_list" id="linkList">
+										</ul>
+										<div class="pagination tr" id="pageBar">
+										</div>
+									</div>
+								</div>
+							</form>
+
+							<div class="dialog_ft">
+								<span class="btn btn_primary btn_input" id="linkOk"><button type="button">确定</button></span>
+								<span class="btn btn_default btn_input jsLinkClose"><button type="button">取消</button></span>
+							</div>
+
+						</div>
+					</div>
+					<div class="mask" id="mask" style="display: none;">
+						<iframe frameborder="0" style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity:0);position:absolute;top:0px;left:0px;width:100%;height:100%;" src="about:blank"></iframe>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="foot" id="footer">
+			<ul class="links ft">
+				<li class="links_item">
+					<p class="copyright">Copyright &copy; 2012-2015 Tencent. All Rights Reserved.</p>
+				</li>
+			</ul>
+
+		</div>
+		<script type="text/javascript">
+			 //上报测速 --dom加载完成点
+			window._points && (window._points[2] = +new Date());
+		</script>
+
+		<script type="text/javascript">
+			var MODULES = {
+				'message/send.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/message/send260591.js',
+				'common/qq/emoji.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/emoji218877.js',
+				'common/wx/richEditor/msgSender.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/richEditor/msgSender26a308.js',
+				'message/message_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/message/message_cgi25f3fd.js',
+				'message/renderList.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/message/renderList26a308.js',
+				'common/wx/verifycode.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/verifycode218877.js',
+				'.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/.js',
+				'message/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/message/list26a308.js',
+				'common/wx/top.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/top26cf7c.js',
+				'common/qq/mask.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/mask218877.js',
+				'common/wx/Tips.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/Tips26a308.js',
+				'common/wx/pagebar.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/pagebar265995.js',
+				'common/wx/simplePopup.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/simplePopup264f38.js',
+				'common/qq/Class.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/Class218877.js',
+				'common/wx/media/img.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/img218877.js',
+				'common/wx/media/audio.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/audio25df2d.js',
+				'common/wx/media/video.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/video238f6d.js',
+				'common/wx/media/idCard.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/idCard218877.js',
+				'tpl/msgListItem.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/msgListItem.html26a308.js',
+				'common/wx/RichBuddy.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/RichBuddy26a308.js',
+				'common/wx/remark.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/remark264f38.js',
+				'common/wx/media/simpleAppmsg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/simpleAppmsg262dd6.js',
+				'common/qq/events.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/events218877.js',
+				'common/wx/time.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/time253a4f.js',
+				'tpl/message/video_popup.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/message/video_popup.html218877.js',
+				'common/wx/richEditor/emotionEditor.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/richEditor/emotionEditor2442b5.js',
+				'common/wx/Cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/Cgi21dee3.js',
+				'infringement/apply.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/infringement/apply2606f9.js',
+				'common/wx/Step.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/Step218877.js',
+				'common/wx/upload.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/upload2442b5.js',
+				'common/wx/region.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/region2491a7.js',
+				'common/wx/dialog.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/dialog26a308.js',
+				'common/wx/popup.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/popup26a308.js',
+				'biz_common/jquery.validate.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/jquery.validate265000.js',
+				'biz_web/ui/checkbox.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/ui/checkbox218878.js',
+				'common/qq/jquery.plugin/serializeObject.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/jquery.plugin/serializeObject218877.js',
+				'infringement/login.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/infringement/login24a3c0.js',
+				'infringement/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/infringement/list218878.js',
+				'common/wx/popover.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/popover247b6f.js',
+				'infringement/supplement.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/infringement/supplement2442b5.js',
+				'infringement/manual.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/infringement/manual234186.js',
+				'infringement/detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/infringement/detail218878.js',
+				'mall/card_verify.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/mall/card_verify218877.js',
+				'mall/template_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/mall/template_cgi218877.js',
+				'mall/template_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/mall/template_list218877.js',
+				'statistics/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/statistics/index25df2d.js',
+				'common/wx/iframe.method.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/iframe.method22434e.js',
+				'device/setting.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/device/setting218877.js',
+				'common/wx/editit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/editit218877.js',
+				'device/apply_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/device/apply_list218878.js',
+				'biz_common/moment.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/moment265000.js',
+				'common/wx/tooltips.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/tooltips218877.js',
+				'common/qq/jquery.plugin/zclip.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/jquery.plugin/zclip218877.js',
+				'device/create.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/device/create2442b5.js',
+				'biz_web/ui/dropdown.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/ui/dropdown218878.js',
+				'device/tech_apply.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/device/tech_apply2442b5.js',
+				'biz_web/lib/json.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/json218878.js',
+				'device/datachart.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/device/datachart218877.js',
+				'device/func.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/device/func23b6ff.js',
+				'third/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/third/index2519cc.js',
+				'common/wx/messenger.method.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/messenger.method26a308.js',
+				'test/preview_test.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/test/preview_test218878.js',
+				'common/wx/preview.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/preview218877.js',
+				'bizpage/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/bizpage/list218877.js',
+				'bizpage/cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/bizpage/cgi218877.js',
+				'common/lib/datepicker.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/lib/datepicker218877.js',
+				'widget/datepicker.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/datepicker218878.css',
+				'common/lib/MockJax.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/lib/MockJax218877.js',
+				'common/lib/colorpicker.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/lib/colorpicker218877.js',
+				'tpl/colorpicker.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/colorpicker.html218877.js',
+				'tpl/media/id_card.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/id_card.html236289.js',
+				'widget/media.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/media262dd6.css',
+				'widget/media/richvideo.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/media/richvideo238f6d.css',
+				'biz_web/lib/video.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/video218878.js',
+				'biz_web/lib/swfobject.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/swfobject218878.js',
+				'tpl/media/video.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/video.html238f6d.js',
+				'tpl/media/simple_videomsg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/simple_videomsg.html236289.js',
+				'tpl/media/videomsg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/videomsg.html253a4f.js',
+				'common/wx/media/appmsg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/appmsg218877.js',
+				'tpl/media/appmsg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/appmsg.html262dd6.js',
+				'common/wx/media/appmsgDialog.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/appmsgDialog218877.js',
+				'widget/msg_list.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/msg_list218878.css',
+				'media/media_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/media/media_cgi261c74.js',
+				'tpl/media/single_appmsg_dialog/layout.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/single_appmsg_dialog/layout.html236289.js',
+				'tpl/media/single_appmsg_dialog/item.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/single_appmsg_dialog/item.html236289.js',
+				'common/wx/media/factory.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/factory238f6d.js',
+				'tpl/media/cardmsg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/cardmsg.html236289.js',
+				'tpl/media/img.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/img.html236289.js',
+				'common/wx/media/cardmsg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/cardmsg25676c.js',
+				'cardticket/send_card.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/send_card245405.js',
+				'biz_web/lib/soundmanager2.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/soundmanager2218878.js',
+				'tpl/media/audio.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/audio.html236289.js',
+				'tpl/media/simple_appmsg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/simple_appmsg.html2567db.js',
+				'common/wx/media/imageDialog.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/imageDialog2442b5.js',
+				'tpl/media/dialog/image_layout.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/dialog/image_layout.html236289.js',
+				'tpl/media/dialog/image_list.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/dialog/image_list.html236289.js',
+				'tpl/media/dialog/image_group.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/dialog/image_group.html236289.js',
+				'page/media/dialog_img_pick.css': 'https://res.wx.qq.com/mpres/htmledition/style/page/media/dialog_img_pick25621d.css',
+				'common/wx/media/multipleAppmsg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/media/multipleAppmsg262dd6.js',
+				'tpl/media/multiple_appmsg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/multiple_appmsg.html26cf7c.js',
+				'widget/emotion_editor.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/emotion_editor23b187.css',
+				'tpl/richEditor/emotionEditor.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/richEditor/emotionEditor.html26a916.js',
+				'common/wx/richEditor/wysiwyg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/richEditor/wysiwyg26a308.js',
+				'common/wx/richEditor/emotion.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/richEditor/emotion218877.js',
+				'common/wx/richEditor/editorRange.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/richEditor/editorRange218877.js',
+				'widget/msg_sender.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/msg_sender26a916.css',
+				'common/qq/jquery.plugin/tab.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/jquery.plugin/tab25df2d.js',
+				'media/media_dialog.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/media/media_dialog25676c.js',
+				'common/wx/tooltip.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/tooltip218877.js',
+				'tpl/richEditor/emotion.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/richEditor/emotion.html238f6d.js',
+				'common/wx/sosomap/searchService.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/sosomap/searchService218877.js',
+				'common/wx/sosomap/event.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/sosomap/event218877.js',
+				'common/wx/sosomap/city_select.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/sosomap/city_select24bdf0.js',
+				'common/wx/sosomap/citydata.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/sosomap/citydata25bca6.js',
+				'common/wx/sosomap/map.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/sosomap/map234186.js',
+				'common/wx/sosomap/util.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/sosomap/util218877.js',
+				'common/wx/multiSelector/data/industry.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/multiSelector/data/industry222ca2.js',
+				'common/wx/multiSelector/data/city.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/multiSelector/data/city218877.js',
+				'common/wx/multiSelector/city.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/multiSelector/city218877.js',
+				'common/wx/multiSelector.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/multiSelector25676c.js',
+				'common/wx/multiSelector/industry.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/multiSelector/industry218877.js',
+				'common/wx/multiSelector/shop_city.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/multiSelector/shop_city218877.js',
+				'common/wx/phone_validate.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/phone_validate218877.js',
+				'tpl/phone_validate.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/phone_validate.html218877.js',
+				'biz_web/lib/uploadify.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/uploadify218878.js',
+				'widget/upload.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/upload22a2de.css',
+				'tpl/uploader.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/uploader.html230dc4.js',
+				'common/wx/keyword.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/keyword218877.js',
+				'tpl/keyword.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/keyword.html218877.js',
+				'tpl/basekeyword.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/basekeyword.html218877.js',
+				'common/wx/idcardhelper.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/idcardhelper218877.js',
+				'tpl/idcardhelper.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/idcardhelper.html218ac3.js',
+				'common/wx/Idcheck.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/Idcheck218877.js',
+				'tpl/Idcheck.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/Idcheck.html218877.js',
+				'biz_common/cookie.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/cookie265000.js',
+				'tpl/tooltip.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/tooltip.html218877.js',
+				'widget/tooltip.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/tooltip218878.css',
+				'widget/areaselector.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/areaselector218878.css',
+				'tpl/multiSelector/list.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/multiSelector/list.html222ca2.js',
+				'tpl/multiSelector/list_item.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/multiSelector/list_item.html222ca2.js',
+				'tpl/multiSelector/item.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/multiSelector/item.html222ca2.js',
+				'common/wx/cgiReport.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/cgiReport218877.js',
+				'common/wx/inputCounter.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/inputCounter23182d.js',
+				'biz_common/jquery.ui/jquery.ui.draggable.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/jquery.ui/jquery.ui.draggable265000.js',
+				'tpl/dialog.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/dialog.html253a4f.js',
+				'common/wx/Excel.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/Excel22f1a9.js',
+				'tpl/Excel.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/Excel.html218877.js',
+				'common/wx/isdspeed.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/isdspeed218877.js',
+				'common/wx/widgetBridge.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/widgetBridge218877.js',
+				'widget/pagination.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/pagination218878.css',
+				'tpl/pagebar.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/pagebar.html218877.js',
+				'common/wx/autocomplete.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/autocomplete218877.js',
+				'tpl/popup.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/popup.html253a4f.js',
+				'common/wx/messenger.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/messenger218877.js',
+				'common/wx/anchor.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/anchor218877.js',
+				'tpl/RichBuddy/RichBuddyLayout.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/RichBuddy/RichBuddyLayout.html25df2d.js',
+				'tpl/RichBuddy/RichBuddyContent.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/RichBuddy/RichBuddyContent.html25df2d.js',
+				'widget/rich_buddy.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/rich_buddy26a308.css',
+				'user/user_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/user/user_cgi25df2d.js',
+				'common/wx/dateSelect.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/dateSelect218877.js',
+				'widget/date_select.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/date_select218878.css',
+				'tpl/dateSelect.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/dateSelect.html218877.js',
+				'common/wx/dragHelper.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/dragHelper218877.js',
+				'common/wx/dropdowns.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/dropdowns218877.js',
+				'biz_web/widget/dropdown.css': 'https://res.wx.qq.com/mpres/htmledition/style/biz_web/widget/dropdown218878.css',
+				'tpl/dropdowns.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/dropdowns.html218877.js',
+				'common/wx/Log.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/Log2254d3.js',
+				'common/wx/wxt.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/wxt218877.js',
+				'common/wx/iframe.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/iframe218877.js',
+				'tpl/editit.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/editit.html218877.js',
+				'common/wx/slider.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/slider218877.js',
+				'widget/slider.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/slider218878.css',
+				'tpl/slider.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/slider.html218877.js',
+				'common/wx/hash.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/hash218877.js',
+				'common/wx/noticeBox.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/noticeBox26a308.js',
+				'tpl/noticeBox.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/noticeBox.html26a308.js',
+				'tpl/popover.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/popover.html253a4f.js',
+				'common/wx/hourspan.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/hourspan218877.js',
+				'tpl/hourspan.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/hourspan.html218877.js',
+				'widget/verifycode.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/verifycode244d4b.css',
+				'tpl/verifycode.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/verifycode.html244d4b.js',
+				'common/wx/trade.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/trade218877.js',
+				'common/qq/prototype.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/prototype21a6f0.js',
+				'common/wx/accordion.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/accordion218877.js',
+				'tpl/accordion.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/accordion.html218877.js',
+				'tpl/top.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/top.html218877.js',
+				'common/wx/qrcode_download.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/qrcode_download218877.js',
+				'tpl/qrcode_download.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/qrcode_download.html218877.js',
+				'common/wx/multiDropdown.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/multiDropdown218877.js',
+				'widget/dropdown.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/dropdown2254d3.css',
+				'tpl/multi_dropdown.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/multi_dropdown.html218877.js',
+				'tpl/multi_ddchild.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/multi_ddchild.html218877.js',
+				'common/wx/report_util.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/report_util265438.js',
+				'biz_web/lib/highcharts.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/highcharts218878.js',
+				'biz_web/ui/dateRange.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/ui/dateRange26a308.js',
+				'common/wx/tooltipsManager.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/tooltipsManager218877.js',
+				'common/wx/stopMultiRequest.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/stopMultiRequest21aa14.js',
+				'widget/processor_bar.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/processor_bar218878.css',
+				'tpl/step.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/step.html218877.js',
+				'tpl/tooltips.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/tooltips.html253a4f.js',
+				'tpl/simplePopup.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/simplePopup.html2545e0.js',
+				'common/wx/pay_by_qrcode.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/pay_by_qrcode218877.js',
+				'tpl/pay_by_qrcode.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/pay_by_qrcode.html218877.js',
+				'common/wx/qrcheck.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx/qrcheck25404f.js',
+				'common/qq/queryString.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/queryString218877.js',
+				'tpl/qrcheck.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/qrcheck.html26c40f.js',
+				'widget/img_preview.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/img_preview222ca2.css',
+				'tpl/preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/preview.html253a4f.js',
+				'tpl/tab.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/tab.html267c1b.js',
+				'widget/msg_tab.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/msg_tab25df2d.css',
+				'common/qq/url.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/url218877.js',
+				'widget/emoji.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/emoji218878.css',
+				'biz_web/lib/spin.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/spin218878.js',
+				'ad_system/promotion/edit/show.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/promotion/edit/show2442b5.js',
+				'biz_web/ui/input/lentips.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/ui/input/lentips26a308.js',
+				'material/common_edit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/material/common_edit24a3c0.js',
+				'ad_system/promotion/edit/click.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/promotion/edit/click227c33.js',
+				'material/materialDialog.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/material/materialDialog218877.js',
+				'ad_system/promotion/edit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/promotion/edit22f1a9.js',
+				'biz_web/lib/store.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/store21a6f0.js',
+				'ad_system/promotion/ad_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/promotion/ad_cgi227c33.js',
+				'ad_system/promotion/ad_timeset.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/promotion/ad_timeset218877.js',
+				'ad_system/helper.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/helper222ca2.js',
+				'ad_system/promotion/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/promotion/list23182d.js',
+				'ad_system/client_index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/client_index222ca2.js',
+				'ad_system/host_manage.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/host_manage236289.js',
+				'ad_system/host_pay.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/host_pay222ca2.js',
+				'ad_system/client_pay.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/client_pay227c33.js',
+				'ad_system/host_report.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/host_report22f1a9.js',
+				'biz_common/underscore.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/underscore265000.js',
+				'ad_system/client_report.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/client_report236289.js',
+				'ad_system/host_push.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/host_push222ca2.js',
+				'safe/Scan.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/Scan26a308.js',
+				'ad_system/host.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/host26cf7c.js',
+				'ad_system/pop_test.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/pop_test218877.js',
+				'ad_system/client.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/client26cf7c.js',
+				'ad_system/file.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/file2442b5.js',
+				'tpl/ad_system/helper.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/ad_system/helper.html222ca2.js',
+				'ad_system/client_bill.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/client_bill264398.js',
+				'ad_system/host_index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ad_system/host_index26cf7c.js',
+				'shop_verify/info.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop_verify/info218877.js',
+				'shop_verify/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop_verify/index218877.js',
+				'service/profile.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/service/profile253a4f.js',
+				'service/plugins.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/service/plugins253a4f.js',
+				'service/detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/service/detail24cb22.js',
+				'wxverify/invoice_edit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/invoice_edit2442b5.js',
+				'service/myService.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/service/myService253a4f.js',
+				'service/pay.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/service/pay218877.js',
+				'service/base.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/service/base218877.js',
+				'service/order.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/service/order24cb22.js',
+				'service/package.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/service/package218877.js',
+				'advanced/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/index218877.js',
+				'advanced/menuApply.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/menuApply218877.js',
+				'advanced/dev.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/dev25df2d.js',
+				'safe/safe_check.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/safe_check259007.js',
+				'advanced/interface.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/interface218877.js',
+				'advanced/group-alert.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/group-alert218877.js',
+				'advanced/iframe-crossdomain.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/iframe-crossdomain218877.js',
+				'advanced/menuSetting.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/menuSetting26a308.js',
+				'biz_common/xss.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/xss265000.js',
+				'cardticket/parse_data.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/parse_data26cf7c.js',
+				'biz_common/jquery.ui/jquery.ui.sortable.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/jquery.ui/jquery.ui.sortable265000.js',
+				'advanced/verify.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/verify22db22.js',
+				'advanced/edit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/edit218877.js',
+				'advanced/warning.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/warning218877.js',
+				'setting/wxverifycode.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/wxverifycode218878.js',
+				'advanced/customer_apply.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/advanced/customer_apply218877.js',
+				'user/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/user/index26a808.js',
+				'user/group_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/user/group_cgi22db22.js',
+				'tpl/user/grouplist.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/user/grouplist.html21e2b9.js',
+				'tpl/user/userlist.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/user/userlist.html218877.js',
+				'tpl/user/verifylist.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/user/verifylist.html21d289.js',
+				'user/validate_wx.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/user/validate_wx23b6ff.js',
+				'user/force_change_pwd.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/user/force_change_pwd218877.js',
+				'user/validate_phone.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/user/validate_phone218877.js',
+				'subscribe/apply.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/subscribe/apply218878.js',
+				'subscribe/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/subscribe/index264f38.js',
+				'tmplmsg/payment.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/payment218877.js',
+				'tmplmsg/tpl_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/tpl_cgi218877.js',
+				'tmplmsg/preview.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/preview218877.js',
+				'tmplmsg/suggest.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/suggest218877.js',
+				'tmplmsg/apply.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/apply25aae4.js',
+				'tmplmsg/searchBar.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/searchBar218877.js',
+				'tmplmsg/intro.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/intro218877.js',
+				'tmplmsg/store.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/store218877.js',
+				'tmplmsg/payment_detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/payment_detail218877.js',
+				'tmplmsg/detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/detail218877.js',
+				'tmplmsg/payment_lib.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/payment_lib218877.js',
+				'tmplmsg/submit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/submit25f3fd.js',
+				'biz_common/template-2.0.1.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/template-2.0.1265000.js',
+				'tmplmsg/payment_apply_detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/payment_apply_detail218877.js',
+				'tmplmsg/payment_faq.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/payment_faq218877.js',
+				'tmplmsg/tplEdit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/tplEdit218877.js',
+				'widget/colorpicker.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/colorpicker218878.css',
+				'tmplmsg/success.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/success218877.js',
+				'tmplmsg/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tmplmsg/list218877.js',
+				'register/personreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/personreg21d289.js',
+				'register/commonreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/commonreg26a308.js',
+				'register/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/index21d289.js',
+				'wxverify/validateExtend.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/validateExtend218877.js',
+				'register/step1.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/step122a84f.js',
+				'register/step2.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/step222a84f.js',
+				'register/step3.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/step32491a7.js',
+				'register/step4.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/step4260ac5.js',
+				'register/step5.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/step5260591.js',
+				'register/mediareg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/mediareg266ffa.js',
+				'register/refill.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/refill2254d3.js',
+				'register/otherreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/otherreg266ffa.js',
+				'register/type_select.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/type_select218877.js',
+				'register/entreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/entreg260591.js',
+				'register/base_info.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/base_info22a84f.js',
+				'common/lib/jquery.md5.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/lib/jquery.md5.js',
+				'register/upgrade.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/upgrade218877.js',
+				'register/step1_tmpl.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/step1_tmpl218877.js',
+				'register/govreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/register/govreg218877.js',
+				'biz_common/jquery.md5.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/jquery.md5265000.js',
+				'notification/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/notification/index253a4f.js',
+				'home/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/home/index26a308.js',
+				'home/login.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/home/login218877.js',
+				'wbverify/step2_sina.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wbverify/step2_sina218877.js',
+				'wbverify/step2_tx.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wbverify/step2_tx218877.js',
+				'wbverify/step3_sina.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wbverify/step3_sina218877.js',
+				'wbverify/step3_tx.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wbverify/step3_tx218877.js',
+				'wbverify/step.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wbverify/step218877.js',
+				'wbverify/step1.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wbverify/step1218877.js',
+				'material/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/material/list25621d.js',
+				'material/material_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/material/material_cgi218877.js',
+				'tpl/material/material_dialog/layout.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/material/material_dialog/layout.html218877.js',
+				'tpl/material/material_dialog/item.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/material/material_dialog/item.html218877.js',
+				'material/edit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/material/edit25621d.js',
+				'tpl/setting/multi_infowindow_edit.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/setting/multi_infowindow_edit.html218877.js',
+				'tpl/setting/multi_infowindow_check.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/setting/multi_infowindow_check.html218877.js',
+				'tpl/setting/more_size.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/setting/more_size.html218877.js',
+				'tpl/setting/multi_search_result.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/setting/multi_search_result.html218877.js',
+				'tpl/notice/index.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/notice/index.html218877.js',
+				'tpl/sosomap/multi_infowindow_edit.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/sosomap/multi_infowindow_edit.html218877.js',
+				'tpl/sosomap/multi_infowindow_check.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/sosomap/multi_infowindow_check.html218877.js',
+				'tpl/sosomap/multi_search_result.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/sosomap/multi_search_result.html218877.js',
+				'tpl/wxverify/invoice_edit.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/invoice_edit.html218877.js',
+				'tpl/wxverify/artistreg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/artistreg.html23b289.js',
+				'tpl/wxverify/socialreg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/socialreg.html24bdaf.js',
+				'tpl/wxverify/nonprofitreg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/nonprofitreg.html23b289.js',
+				'tpl/wxverify/mediareg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/mediareg.html23b289.js',
+				'tpl/wxverify/media_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/media_preview.html2588f9.js',
+				'tpl/wxverify/entreg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/entreg.html23b289.js',
+				'tpl/wxverify/commonreg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/commonreg.html26cf7c.js',
+				'tpl/wxverify/mediaent_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/mediaent_preview.html2588f9.js',
+				'tpl/wxverify/step1.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/step1.html218877.js',
+				'tpl/wxverify/step3.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/step3.html2254d3.js',
+				'tpl/wxverify/civilian_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/civilian_preview.html2254d3.js',
+				'tpl/wxverify/step5.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/step5.html26cf40.js',
+				'tpl/wxverify/shopreg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/shopreg.html23b289.js',
+				'tpl/wxverify/artist_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/artist_preview.html2254d3.js',
+				'tpl/wxverify/shop_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/shop_preview.html2254d3.js',
+				'tpl/wxverify/social_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/social_preview.html2254d3.js',
+				'tpl/wxverify/nonprofit_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/nonprofit_preview.html2254d3.js',
+				'tpl/wxverify/increment_tax_form.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/increment_tax_form.html22f1a9.js',
+				'tpl/wxverify/mediaentreg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/mediaentreg.html23b289.js',
+				'tpl/wxverify/profitablereg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/profitablereg.html23b289.js',
+				'tpl/wxverify/ent_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/ent_preview.html2254d3.js',
+				'tpl/wxverify/profitable_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/profitable_preview.html2254d3.js',
+				'tpl/wxverify/common_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/common_preview.html2254d3.js',
+				'tpl/wxverify/govreg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/govreg.html23b289.js',
+				'tpl/wxverify/civilianreg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/civilianreg.html24bdaf.js',
+				'tpl/wxverify/gov_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/gov_preview.html2254d3.js',
+				'tpl/wxverify/step2.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/step2.html2254d3.js',
+				'tpl/wxverify/confirmname.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/confirmname.html26cf7c.js',
+				'tpl/wxverify/step4.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/step4.html2588f9.js',
+				'tpl/wxverify/publicservice.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/publicservice.html23b289.js',
+				'tpl/wxverify/publicservice_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/publicservice_preview.html2254d3.js',
+				'tpl/wxverify/commonreg_141210.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/commonreg_141210.html2254d3.js',
+				'tpl/wxverify/step3_141210.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/step3_141210.html2254d3.js',
+				'tpl/wxverify/confirmname_141210.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/wxverify/confirmname_141210.html2254d3.js',
+				'tpl/scan/barcode.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/scan/barcode.html239514.js',
+				'tpl/scan/mobile_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/scan/mobile_preview.html24f234.js',
+				'tpl/scan/category.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/scan/category.html2290a1.js',
+				'tpl/shop/igoodlist.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/shop/igoodlist.html218877.js',
+				'tpl/shop/skulist.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/shop/skulist.html218877.js',
+				'tpl/shop/feedback.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/shop/feedback.html2254d3.js',
+				'tpl/shop/goodlist.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/shop/goodlist.html218877.js',
+				'tpl/shop/shopdropdown.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/shop/shopdropdown.html218877.js',
+				'tpl/shop/grouplist.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/shop/grouplist.html218877.js',
+				'tpl/shop/minilist.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/shop/minilist.html218877.js',
+				'tpl/cardticket/apply_logo.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/apply_logo.html234186.js',
+				'tpl/cardticket/card_quantity.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/card_quantity.html22bfc4.js',
+				'tpl/cardticket/select_shop.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/select_shop.html269c10.js',
+				'tpl/cardticket/card_preview.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/card_preview.html22bfc4.js',
+				'tpl/cardticket/marker_drag.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/marker_drag.html22bfc4.js',
+				'tpl/cardticket/card_table.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/card_table.html25676c.js',
+				'tpl/cardticket/marker_show.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/marker_show.html22bfc4.js',
+				'tpl/cardticket/send_card.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/send_card.html22bfc4.js',
+				'tpl/cardticket/marker_edit.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/marker_edit.html22bfc4.js',
+				'tpl/cardticket/multi_pic_upload.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/multi_pic_upload.html22bfc4.js',
+				'tpl/cardticket/marker_show_new.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/marker_show_new.html22bfc4.js',
+				'tpl/cardticket/create_shop.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/create_shop.html22bfc4.js',
+				'tpl/cardticket/store_edit.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/store_edit.html22bfc4.js',
+				'tpl/cardticket/apply_card_deal.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/apply_card_deal.html22bfc4.js',
+				'tpl/cardticket/import_card.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/import_card.html22bfc4.js',
+				'tpl/cardticket/search_result.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/cardticket/search_result.html262dd6.js',
+				'tpl/media/appmsg_edit/first_appmsg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/appmsg_edit/first_appmsg.html262dd6.js',
+				'tpl/media/appmsg_edit/small_appmsg.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/appmsg_edit/small_appmsg.html236289.js',
+				'tpl/media/appmsg_edit/editor.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/appmsg_edit/editor.html262dd6.js',
+				'tpl/media/dialog/appmsg_layout.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/dialog/appmsg_layout.html262dd6.js',
+				'tpl/media/dialog/videomsg_layout.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/dialog/videomsg_layout.html23ab29.js',
+				'tpl/media/dialog/file_layout.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/dialog/file_layout.html236289.js',
+				'tpl/media/dialog/file.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/dialog/file.html236289.js',
+				'tpl/media/word.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/word.html236289.js',
+				'tpl/media/card_ticket.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/media/card_ticket.html236289.js',
+				'tpl/biz_web/ui/checkbox.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/biz_web/ui/checkbox.html218877.js',
+				'tpl/biz_web/ui/dateRange.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/biz_web/ui/dateRange.html265438.js',
+				'tpl/biz_web/ui/dropdown.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/biz_web/ui/dropdown.html218877.js',
+				'tpl/simple_popup.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/simple_popup.html218877.js',
+				'tpl/remark.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/remark.html218877.js',
+				'tpl/account_message_list.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/account_message_list.html218877.js',
+				'tpl/confirm.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/tpl/confirm.html218877.js',
+				'ivr/keywords.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ivr/keywords238f6d.js',
+				'ivr/ivr_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ivr/ivr_cgi218878.js',
+				'ivr/reply.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/ivr/reply238f6d.js',
+				'news/operation_guide.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/news/operation_guide218877.js',
+				'news/authorization.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/news/authorization218877.js',
+				'news/news_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/news/news_list218877.js',
+				'setting/temp/meeting-account.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/temp/meeting-account22db22.js',
+				'setting/temp/bind-account.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/temp/bind-account218878.js',
+				'setting/tpl/postedit.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/tpl/postedit.html218878.js',
+				'setting/postedit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/postedit218878.js',
+				'setting/CitySelectComponent.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/CitySelectComponent218878.js',
+				'setting/citydata.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/citydata218878.js',
+				'setting/multiMarker.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/multiMarker218878.js',
+				'setting/owner-setting-owner.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/owner-setting-owner2442b5.js',
+				'setting/owner-setting-operator.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/owner-setting-operator25404f.js',
+				'setting/owner-setting.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/owner-setting218878.js',
+				'setting/upgradeService.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/upgradeService22db22.js',
+				'setting/map_setting.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/map_setting2442b5.js',
+				'setting/multi_citydata.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/multi_citydata25bca6.js',
+				'setting/upgrade-notes.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/upgrade-notes22db22.js',
+				'setting/multi_search.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/multi_search218878.js',
+				'setting/multi_city_select.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/multi_city_select218878.js',
+				'setting/multi_map.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/multi_map218878.js',
+				'setting/set-location.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/set-location22f1a9.js',
+				'setting/markerTool.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/markerTool218878.js',
+				'setting/bind-email.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/bind-email2395a4.js',
+				'setting/invade.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/invade2442b5.js',
+				'setting/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/index25f3fd.js',
+				'common/lib/jquery.Jcrop.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/lib/jquery.Jcrop218877.js',
+				'setting/mphelper.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/mphelper218878.js',
+				'setting/safehelper.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/safehelper2254d3.js',
+				'setting/dev.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/dev218878.js',
+				'setting/SearchResultPanel.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/SearchResultPanel218878.js',
+				'setting/MyMarker.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/MyMarker218878.js',
+				'setting/multi_location.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/multi_location218878.js',
+				'setting/bind-email-status.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/bind-email-status22a84f.js',
+				'setting/function.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/setting/function264f38.js',
+				'wxverify/step5.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/step526cf40.js',
+				'wxverify/init.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/init2442b5.js',
+				'wxverify/detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/detail260591.js',
+				'wxverify/artistreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/artistreg218877.js',
+				'wxverify/commonreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/commonreg25404f.js',
+				'wxverify/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/index2442b5.js',
+				'wxverify/step1.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/step1218877.js',
+				'wxverify/step2.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/step226cf7c.js',
+				'wxverify/step3_141210.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/step3_141210.js',
+				'wxverify/step4.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/step42442b5.js',
+				'wxverify/shopreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/shopreg218877.js',
+				'wxverify/socialreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/socialreg218877.js',
+				'wxverify/nonprofitreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/nonprofitreg218877.js',
+				'wxverify/refill.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/refill2442b5.js',
+				'wxverify/mediareg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/mediareg218877.js',
+				'wxverify/mediaentreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/mediaentreg218877.js',
+				'wxverify/entreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/entreg218877.js',
+				'wxverify/profitablereg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/profitablereg218877.js',
+				'wxverify/govreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/govreg2254d3.js',
+				'wxverify/supplement_verify_info.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/supplement_verify_info2442b5.js',
+				'wxverify/civilianreg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/civilianreg218877.js',
+				'wxverify/publicservice.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/publicservice2254d3.js',
+				'biz_common/aes.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/aes265000.js',
+				'wxverify/confirmName.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/confirmName218877.js',
+				'wxverify/step3.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/step326cf7c.js',
+				'wxverify/commonreg_141210.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/commonreg_141210.js',
+				'wxverify/confirmName_141210.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxverify/confirmName_141210.js',
+				'scan/barcode_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/barcode_list2442b5.js',
+				'scan/biz_category.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/biz_category24f234.js',
+				'scan/step1.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/step122c391.js',
+				'scan/apply_v2.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/apply_v22588f9.js',
+				'scan/scan_barcode.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/scan_barcode2442b5.js',
+				'scan/scan_category.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/scan_category260ac5.js',
+				'scan/item_basic.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/item_basic24f234.js',
+				'scan/add_business_category.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/add_business_category2442b5.js',
+				'scan/product_detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/product_detail267b7b.js',
+				'biz_common/utils/string/html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/utils/string/html265000.js',
+				'scan/mobile_preview.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/mobile_preview24f234.js',
+				'scan/create_product.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/create_product24f234.js',
+				'scan/item_detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/item_detail24f234.js',
+				'scan/item_service.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/item_service24f234.js',
+				'scan/item_channel.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/item_channel24f234.js',
+				'scan/overview.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/overview24f234.js',
+				'scan/add_barcode.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/add_barcode25828b.js',
+				'scan/category_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/category_list2442b5.js',
+				'scan/product_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/product_list265518.js',
+				'scan/whitelist.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/whitelist222ca2.js',
+				'scan/apply.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/scan/apply2442b5.js',
+				'common/qq/jquery.plugin/btn.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/qq/jquery.plugin/btn23b187.js',
+				'accusation/accuse_info.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/accusation/accuse_info2442b5.js',
+				'business/overview.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/overview218877.js',
+				'business/faq.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/faq218877.js',
+				'business/rightlist.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/rightlist2442b5.js',
+				'business/order.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/order218877.js',
+				'business/whitelist.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/whitelist218877.js',
+				'business/right.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/right218877.js',
+				'business/setting.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/setting218877.js',
+				'business/release.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/release218877.js',
+				'business/arbist.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/arbist2442b5.js',
+				'business/first_check.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/first_check2442b5.js',
+				'business/info.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/info218877.js',
+				'business/rank.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/rank218877.js',
+				'business/course.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/course218877.js',
+				'business/source.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/source218877.js',
+				'business/iframe.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/iframe218877.js',
+				'business/pay-reg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/business/pay-reg218877.js',
+				'payApply/businessInfo.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/payApply/businessInfo2442b5.js',
+				'payApply/businessMenu.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/payApply/businessMenu218877.js',
+				'payApply/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/payApply/index218877.js',
+				'payApply/release.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/payApply/release218877.js',
+				'payApply/earnest.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/payApply/earnest218877.js',
+				'payApply/finance.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/payApply/finance2442b5.js',
+				'payApply/baseInfo.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/payApply/baseInfo2442b5.js',
+				'mass/send.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/mass/send262dd6.js',
+				'mass/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/mass/list25621d.js',
+				'shop/shelf_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/shelf_cgi23182d.js',
+				'shop/feedback.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/feedback23182d.js',
+				'page/shop/shop_feedback.css': 'https://res.wx.qq.com/mpres/htmledition/style/page/shop/shop_feedback218878.css',
+				'shop/create_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/create_cgi23182d.js',
+				'shop/order_info.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/order_info23182d.js',
+				'shop/order_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/order_cgi23182d.js',
+				'shop/express.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/express23182d.js',
+				'shop/shop_guide.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/shop_guide23182d.js',
+				'shop/shopdropdown.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/shopdropdown23182d.js',
+				'shop/deliveryedit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/deliveryedit23182d.js',
+				'shop/delivery_common.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/delivery_common23182d.js',
+				'shop/goods_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/goods_cgi23182d.js',
+				'shop/shelf_management.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/shelf_management23182d.js',
+				'shop/tmpl_management.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/tmpl_management2442b5.js',
+				'shop/create_img.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/create_img2442b5.js',
+				'shop/imgs.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/imgs23182d.js',
+				'shop/group_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/group_cgi23182d.js',
+				'shop/create.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/create2442b5.js',
+				'shop/create_edit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/create_edit26a308.js',
+				'shop/config.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/config23182d.js',
+				'shop/shelf_edit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/shelf_edit23182d.js',
+				'shop/overview.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/overview23182d.js',
+				'shop/order_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/order_list2582d7.js',
+				'shop/myshelf.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/myshelf23182d.js',
+				'shop/faq.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/faq23182d.js',
+				'shop/imglist.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/imglist2442b5.js',
+				'shop/precreate.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/precreate23182d.js',
+				'shop/template_choose.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/template_choose23182d.js',
+				'shop/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/list23182d.js',
+				'shop/category.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/category23182d.js',
+				'shop/deliverylist.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/deliverylist23182d.js',
+				'shop/test.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/shop/test23182d.js',
+				'authorize/validate_wx.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/authorize/validate_wx218877.js',
+				'authorize/auth_login.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/authorize/auth_login247b6f.js',
+				'authorize/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/authorize/list218877.js',
+				'authorize/plugin.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/authorize/plugin218877.js',
+				'cardticket/select_shop_popup.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/select_shop_popup26cf7c.js',
+				'cardticket/select_shop.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/select_shop269c10.js',
+				'cardticket/store_helper.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/store_helper262dd6.js',
+				'cardticket/common_validate.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/common_validate262dd6.js',
+				'cardticket/destroy_ticket.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/destroy_ticket26cf7c.js',
+				'cardticket/common_template_helper.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/common_template_helper269c10.js',
+				'cardticket/codepad.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/codepad22bfc4.js',
+				'cardticket/store_edit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/store_edit22bfc4.js',
+				'cardticket/searchResult.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/searchResult22bfc4.js',
+				'cardticket/store_marker.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/store_marker242c7c.js',
+				'cardticket/create_shop.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/create_shop22bfc4.js',
+				'cardticket/search_map.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/search_map22bfc4.js',
+				'cardticket/marker_mgr.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/marker_mgr22bfc4.js',
+				'page/cardticket/store_map.css': 'https://res.wx.qq.com/mpres/htmledition/style/page/cardticket/store_map262dd6.css',
+				'cardticket/overview_record.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/overview_record22bfc4.js',
+				'cardticket/overview_enum.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/overview_enum22bfc4.js',
+				'cardticket/topmenu.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/topmenu25676c.js',
+				'cardticket/apply_logo.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/apply_logo2442b5.js',
+				'page/cardticket/apply_widget_form.css': 'https://res.wx.qq.com/mpres/htmledition/style/page/cardticket/apply_widget_form25b76d.css',
+				'cardticket/card_quantity.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/card_quantity22bfc4.js',
+				'cardticket/apply_detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/apply_detail22bfc4.js',
+				'cardticket/overview_batch.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/overview_batch22bfc4.js',
+				'cardticket/store_edit_new.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/store_edit_new262dd6.js',
+				'cardticket/multi_pic_upload.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/multi_pic_upload2442b5.js',
+				'cardticket/store_category.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/store_category22bfc4.js',
+				'cardticket/simple_search_map.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/simple_search_map262dd6.js',
+				'cardticket/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/list22bfc4.js',
+				'cardticket/whitelist.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/whitelist22bfc4.js',
+				'cardticket/store_detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/store_detail24a3c0.js',
+				'cardticket/store_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/store_cgi262dd6.js',
+				'cardticket/apply_card.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/apply_card2442b5.js',
+				'cardticket/carduse_record.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/carduse_record269c10.js',
+				'cardticket/init_card_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/init_card_list22bfc4.js',
+				'cardticket/apply_grade.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/apply_grade2442b5.js',
+				'cardticket/area_selector.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/area_selector22bfc4.js',
+				'cardticket/apply_prepaid.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/apply_prepaid2442b5.js',
+				'cardticket/detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/detail25676c.js',
+				'cardticket/import_card.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/import_card22bfc4.js',
+				'page/cardticket/dialog_choose_card.css': 'https://res.wx.qq.com/mpres/htmledition/style/page/cardticket/dialog_choose_card26cfa8.css',
+				'cardticket/apply_api_highlevel.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/apply_api_highlevel22bfc4.js',
+				'cardticket/overview.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/overview22bfc4.js',
+				'page/cardticket/dialog_select_shop.css': 'https://res.wx.qq.com/mpres/htmledition/style/page/cardticket/dialog_select_shop269c10.css',
+				'cardticket/batch_card.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/batch_card26cf7c.js',
+				'cardticket/apply_index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/apply_index22f1a9.js',
+				'cardticket/apply_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/apply_list22bfc4.js',
+				'cardticket/overview_user_analyze.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/overview_user_analyze22bfc4.js',
+				'cardticket/changeRemark.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/changeRemark22bfc4.js',
+				'cardticket/store_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/store_list2442b5.js',
+				'cardticket/overview_detail.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/overview_detail24ca4c.js',
+				'cardticket/add.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/add25676c.js',
+				'cardticket/permission.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/cardticket/permission25676c.js',
+				'page/cardticket/widget_add_img.css': 'https://res.wx.qq.com/mpres/htmledition/style/page/cardticket/widget_add_img25b76d.css',
+				'safe/tpl/safe_check.html.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/tpl/safe_check.html2254d3.js',
+				'safe/Mobile.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/Mobile2254d3.js',
+				'safe/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/index262dd6.js',
+				'safe/notify.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/notify2254d3.js',
+				'safe/phone.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/phone2254d3.js',
+				'safe/force.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/force2254d3.js',
+				'safe/safe_cgi.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/safe_cgi2254d3.js',
+				'safe/record.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/record2254d3.js',
+				'safe/remind.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/remind2254d3.js',
+				'safe/phone_modify.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/phone_modify2254d3.js',
+				'safe/protect.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/protect2254d3.js',
+				'safe/token.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/token2254d3.js',
+				'safe/rebind.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/rebind2254d3.js',
+				'widget/qrcode_scan.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/qrcode_scan262dd6.css',
+				'safe/admins.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/safe/admins2254d3.js',
+				'media/appmsg_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/media/appmsg_list26a308.js',
+				'media/videomsg_edit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/media/videomsg_edit2442b5.js',
+				'media/img_list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/media/img_list260ac5.js',
+				'media/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/media/list2442b5.js',
+				'media/picture_preview.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/media/picture_preview218877.js',
+				'media/appmsg_edit.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/media/appmsg_edit26cf7c.js',
+				'widget/media/appmsg_editor.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/media/appmsg_editor238f6d.css',
+				'widget/media/media_dialog.css': 'https://res.wx.qq.com/mpres/htmledition/style/widget/media/media_dialog25621d.css',
+				'enterprise/login_enterprise_frame.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/enterprise/login_enterprise_frame218878.js',
+				'biz_web/widget/date_range.css': 'https://res.wx.qq.com/mpres/htmledition/style/biz_web/widget/date_range218878.css',
+				'biz_web/lib/webuploader/runtime/flash/runtime.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/flash/runtime230dc4.js',
+				'biz_web/lib/webuploader/base.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/base230dc4.js',
+				'biz_web/lib/webuploader/runtime/runtime.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/runtime230dc4.js',
+				'biz_web/lib/webuploader/runtime/compbase.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/compbase230dc4.js',
+				'biz_web/lib/webuploader/runtime/flash/transport.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/flash/transport230dc4.js',
+				'biz_web/lib/webuploader/runtime/client.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/client230dc4.js',
+				'biz_web/lib/webuploader/runtime/flash/filepicker.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/flash/filepicker230dc4.js',
+				'biz_web/lib/webuploader/runtime/flash/blob.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/flash/blob230dc4.js',
+				'biz_web/lib/webuploader/lib/blob.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/lib/blob230dc4.js',
+				'biz_web/lib/webuploader/runtime/flash/image.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/flash/image230dc4.js',
+				'biz_web/lib/webuploader/runtime/html5/imagemeta/exif.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/html5/imagemeta/exif230dc4.js',
+				'biz_web/lib/webuploader/runtime/html5/imagemeta.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/html5/imagemeta230dc4.js',
+				'biz_web/lib/webuploader/runtime/html5/util.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/html5/util230dc4.js',
+				'biz_web/lib/webuploader/runtime/html5/transport.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/html5/transport230dc4.js',
+				'biz_web/lib/webuploader/runtime/html5/runtime.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/html5/runtime230dc4.js',
+				'biz_web/lib/webuploader/runtime/html5/filepicker.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/html5/filepicker230dc4.js',
+				'biz_web/lib/webuploader/runtime/html5/blob.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/html5/blob230dc4.js',
+				'biz_web/lib/webuploader/runtime/html5/image.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/html5/image230dc4.js',
+				'biz_web/lib/webuploader/runtime/html5/jpegencoder.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/runtime/html5/jpegencoder230dc4.js',
+				'biz_web/lib/webuploader/mediator.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/mediator230dc4.js',
+				'biz_web/lib/webuploader/lib/image.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/lib/image230dc4.js',
+				'biz_web/lib/webuploader/lib/transport.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/lib/transport230dc4.js',
+				'biz_web/lib/webuploader/lib/filepicker.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/lib/filepicker230dc4.js',
+				'biz_web/lib/webuploader/lib/file.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/lib/file230dc4.js',
+				'biz_web/lib/webuploader/widgets/filepicker.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/widgets/filepicker230dc4.js',
+				'biz_web/lib/webuploader/uploader.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/uploader230dc4.js',
+				'biz_web/lib/webuploader/widgets/widget.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/widgets/widget230dc4.js',
+				'biz_web/lib/webuploader/widgets/image.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/widgets/image230dc4.js',
+				'biz_web/lib/webuploader/widgets/runtime.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/widgets/runtime230dc4.js',
+				'biz_web/lib/webuploader/widgets/queue.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/widgets/queue230dc4.js',
+				'biz_web/lib/webuploader/queue.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/queue230dc4.js',
+				'biz_web/lib/webuploader/file.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/file230dc4.js',
+				'biz_web/lib/webuploader/widgets/upload.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/widgets/upload230dc4.js',
+				'biz_web/lib/webuploader/widgets/validator.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/widgets/validator230dc4.js',
+				'biz_web/lib/webuploader/promise.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/promise230dc4.js',
+				'biz_web/lib/webuploader/dollar-builtin.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/dollar-builtin230dc4.js',
+				'biz_web/lib/webuploader/dollar-third.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader/dollar-third230dc4.js',
+				'biz_web/lib/webuploader.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/webuploader234186.js',
+				'biz_web/lib/audiojs.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_web/lib/audiojs218878.js',
+				'jquery-1.7.2.min.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/jquery-1.7.2.min218878.js',
+				'biz_common/ui/imgonepx.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/ui/imgonepx265000.js',
+				'biz_common/dom/attr.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/dom/attr265000.js',
+				'biz_common/dom/event.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/dom/event265000.js',
+				'biz_common/dom/class.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/dom/class265000.js',
+				'biz_common/log/jserr.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/log/jserr265000.js',
+				'biz_common/utils/url/parse.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/utils/url/parse265000.js',
+				'biz_common/utils/string/emoji.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/utils/string/emoji265000.js',
+				'biz_common/utils/geolocation.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/utils/geolocation265000.js',
+				'biz_common/utils/norefererimg.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/utils/norefererimg265000.js',
+				'biz_common/utils/cookie.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/utils/cookie265000.js',
+				'biz_common/utils/asyncJs.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/utils/asyncJs265000.js',
+				'biz_common/utils/report.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/utils/report265000.js',
+				'biz_common/template-2.0.1-cmd.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/template-2.0.1-cmd265000.js',
+				'biz_common/tmpl.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/tmpl265000.js',
+				'biz_common/jquery-1.9.1.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/biz_common/jquery-1.9.1265000.js',
+				'discuss/list.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/discuss/list26a308.js',
+				'discuss/category.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/discuss/category23ac21.js',
+				'discuss/apply.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/discuss/apply23ac21.js',
+				'discuss/index.js': 'https://res.wx.qq.com/mpres/zh_CN/htmledition/js/discuss/index23ac21.js'
+			};
+		</script>
+		<script type="text/javascript">
+			window.wx = {
+				version: "4.0.0",
+				data: {
+					t: "938922762",
+					ticket: "5215d0ca896ec7a2fd27f2c7a3ce696dc1553e1c",
+					lang: 'zh_CN',
+					param: ["&token=938922762", '&lang=zh_CN'].join(""),
+					uin: "3088008258",
+					uin_base64: "MzA4ODAwODI1OA==",
+					user_name: "gh_773789eeddab",
+					nick_name: "永远的遗书",
+					time: "1436024302" || new Date().getTime() / 1000
+				},
+				path: {
+					video: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/video-js218877.swf",
+					audio: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/audiojs218877.swf",
+					uploadify: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/uploadify218877.swf",
+					webuploader: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/webuploader230dc3.swf",
+					zoom: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/zoom230dc3.swf",
+					rimgcrop: "https://res.wx.qq.com/mpres/htmledition/images/cut-round218877.gif"
+				},
+				acl: {
+					"msg_acl": {
+						"can_text_msg": 1,
+						"can_image_msg": 1,
+						"can_voice_msg": 1,
+						"can_video_msg": 1,
+						"can_app_msg": 1,
+						"can_commodity_app_msg": 0,
+						"can_card_msg": "0" * 1 || 0, // @cunjinli改掉
+						"can_use_shortvideo": "0" * 1
+					},
+					"ivr_acl": {
+						"can_text_msg": 1,
+						"can_image_msg": 1,
+						"can_voice_msg": 1,
+						"can_video_msg": 1,
+						"can_app_msg": 1,
+						"can_commodity_app_msg": 0
+					},
+					"merchant_acl": {
+						"can_use_pay_tmpl": "" * 1,
+						"can_use_account_manage": "" * 1
+					},
+					"ad_system": {
+						"can_use_sp": "" * 1
+					}
+				},
+				events: {} //全局的事件绑定
+			};
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/js/sea22f1a9.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/lib218877.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/js/common/wx26a308.js"></script>
+
+		<script type="text/javascript">
+			_points && (_points[3] = +new Date());
+
+			function getico(i) {
+				var _img = new Image(1, 1);
+				_img.src = wx.url && wx.url(location.protocol + "//" + location.host + "/misc/getico" + "?location=" + (i || -1) + "&rand=" + Math.random());
+			};
+			getico('1702');
+			/****************************邪恶的上报分割线**********************************************************/
+			 //上报测速  --onready测速点
+			jQuery(function() {
+				window._points && (window._points[4] = +new Date()); //onready
+			});
+			window.onload = function() {
+				//onload测速点
+				window._points && (window._points[5] = +new Date()); //onload
+				var params = [];
+				setTimeout(function() {
+					//是否支持html5
+					if (window.performance && window.performance.timing && window.performance.timing.navigationStart) {
+						params.push("flag1=7839&flag2=4&flag3=3");
+						//html上报排序
+						var field = [
+							"navigationStart",
+							"unloadEventStart",
+							"unloadEventEnd",
+							"redirectStart",
+							"redirectEnd",
+							"fetchStart",
+							"domainLookupStart",
+							"domainLookupEnd",
+							"connectStart",
+							"connectEnd",
+							"requestStart",
+							"responseStart",
+							"responseEnd",
+							"domLoading",
+							"domInteractive",
+							"domContentLoadedEventStart",
+							"domContentLoadedEventEnd",
+							"domComplete",
+							"loadEventStart",
+							"loadEventEnd"
+						];
+						field.each(function(name, i) {
+							field[i] = window.performance.timing[name];
+						});
+						//将html测速点和页面测速点合并
+						_points = field.concat(_points.slice(1));
+						//如果页面有https连接上报
+						window.performance.timing.secureConnectionStart && _points.push(window.performance.timing.secureConnectionStart);
+					} else {
+						params.push("flag1=7839&flag2=4&flag3=2");
+					}
+					_points && _points.each(function(p, i) {
+						if (i > 0 && p > 0) {
+							(p - _points[0]) && params.push(i + "=" + (p - _points[0]))
+						} else {
+							//console.log(i + ":" + p);
+						}
+					});
+					_sendReport(params.join("&"));
+				}, 3000);
+			}
+
+			function _sendReport(param) {
+				if (window.location.href.indexOf("https") > -1) {
+					var img = new Image();
+					img.src = "https://huatuospeed.weiyun.com/cgi-bin/r.cgi?" + param;
+				} else {
+					console.log(param);
+				}
+			}
+			seajs.use('common/wx/Log', wx_main);;
+			 //菜单中 所有子菜单dd 带A标签中有new class的元素
+			jQuery("#menuBar").find("dd>a").click(function(event) {
+				if ($(this).find(".new").length > 0) {
+					jQuery.ajax({
+						url: "/misc/navoperation",
+						data: {
+							action: "click",
+							id: $(this).data("id"),
+							token: wx.data.t
+						},
+						type: "post"
+					})
+				}
+				//return false;
+			});
+		</script>
+
+		<script type="text/javascript">
+			define('biz_web/widget/date_range.css', [], function() {
+				return null;
+			});
+			define('widget/media/richvideo.css', [], function() {
+				return null;
+			});
+			define('page/cardticket/dialog_choose_card.css', [], function() {
+				return null;
+			});
+			define('widget/verifycode.css', [], function() {
+				return null;
+			});
+			define('widget/processor_bar.css', [], function() {
+				return null;
+			});
+			define('widget/media.css', [], function() {
+				return null;
+			});
+			define('widget/tooltip.css', [], function() {
+				return null;
+			});
+			define('widget/pagination.css', [], function() {
+				return null;
+			});
+			define('widget/media/media_dialog.css', [], function() {
+				return null;
+			});
+			define('page/smallvideo/dialog_select_video.css', [], function() {
+				return null;
+			});
+			define('page/media/dialog_img_pick.css', [], function() {
+				return null;
+			});
+			define('biz_web/widget/dropdown.css', [], function() {
+				return null;
+			});
+			define('widget/datepicker.css', [], function() {
+				return null;
+			});
+			define('widget/upload.css', [], function() {
+				return null;
+			});
+			define('widget/date_select.css', [], function() {
+				return null;
+			});
+			define('page/vote/dialog_vote_table.css', [], function() {
+				return null;
+			});
+			define('widget/media/appmsg_editor.css', [], function() {
+				return null;
+			});
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../jav/mana_file_new.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../miss/json218878.js"></script>
+		<script type="text/javascript" src="../miss/store21a6f0.js"></script>
+		<script type="text/javascript" src="../miss/webuploader234186.js"></script>
+		<script type="text/html" id="tplMsg">
+			{each data as link}
+			<li class="my_link_item">
+				<label class="frm_radio_label">
+					<i class="icon_radio"></i>
+					<span class="lbl_content">{link.title}<span class="date">{link.time}</span></span>
+					<input type="radio" name="hello" class="frm_radio" data-title="{link.title}" data-id="{link.aid}" data-href="{link.href}">
+				</label>
+			</li>
+			{/each}
+		</script>
+		<script type="text/html" id="tpl_original_desc">
+			<div class="original_poptips">
+				<h4>原创声明</h4>
+				<p class="tips_global">公众平台鼓励用户发表原创文章；非原创文章不能选择原创声明，一经发现将按照《微信公众平台服务协议》有关规定进行处理。</p>
+				<h4>注明转载</h4>
+				<p class="tips_global">转载文章请注明出处</p>
+				<h4>不申明来源</h4>
+				<p class="tips_global">未选择原创声明和注明转载，系统可能会给文章自动注明出处。详情请阅读<a href="">《公众平台原创保护说明》</a>
+				</p>
+			</div>
+		</script>
+		<script type="text/html" id="tpl_original">
+			<div class="processor_bar_wrp js_step"></div>
+			<div class="step_panel step_agreement js_step_panel">
+				<div class="simple_dialog_content">
+					<div class="page_msg small default">
+						<div class="inner">
+							<span class="msg_icon_wrp"><i class="icon_msg info"></i></span>
+							<div class="msg_content">
+								<h4>文章原创声明须知</h4>
+								<p>
+									原创特指自己写的、独立完成创作的作品。歪曲、篡改他人创作或者抄袭、剽窃他人创作而产生的作品，改编、翻译、注释、整理他人已有创作而产生的作品均不能说是原创。 </p>
+								<p>
+									公众平台鼓励用户发表原创文章，平台会对原创声明的文章在群发后进行审核，审核通过后文章会被标识为原创文章。 </p>
+								<p>
+									如下情形不得对文章进行原创声明，一经发现将永久收回原创声明功能使用权限，导致严重影响的还将对违规公众帐号予以一定期限内封号处理。
+									<br> 1. 抄袭的文章；
+									<br> 2. 文章主要篇幅为诸如“法律、法规，国家机关的决议、决定、命令和其他具有立法、行政、司法性质的文件、时事新闻、历法、通用数表、通用表格和公式”等的公共内容；
+									<br> 3. 大篇幅引用他人内容或文章主要内容为他人作品，如书摘、文摘、报摘等；
+									<br> 4. 营销性质的内容；
+									<br> 5. 整合的内容；
+									<br> 6. 对非独家代理的文章声明原创等；
+									<br> 7. 色情低俗内容、暴力内容、不实信息等内容；
+									<br> 8. 违反法律法规、政策及公序良俗、社会公德，违反《微信公众平台服务协议》、《微信公众平台运营规范》，或干扰微信公众平台正常运营和侵犯其他用户或第三方合法权益内容的信息。 </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="step_panel js_step_panel original_edit_box" style="display:none;">
+				<div class="simple_dialog_content">
+					<div class="frm_control_group">
+						<label class="frm_label" for="">公众平台首发</label>
+						<div class="frm_controls frm_vertical_pt">
+							<label class="frm_radio_label">
+								<i class="icon_radio"></i>
+								<span class="lbl_content">是</span>
+								<input type="radio" name="" class="js_original_publish frm_radio" value="1" checked>
+							</label>
+							<label class="frm_radio_label">
+								<i class="icon_radio"></i>
+								<span class="lbl_content">否</span>
+								<input type="radio" name="" class="js_original_publish frm_radio" value="0">
+							</label>
+						</div>
+					</div>
+					<div class="original_edit_inner_box">
+						<div class="frm_control_group">
+							<label class="frm_label" for="">原文链接</label>
+							<div class="frm_controls">
+								<span class="frm_input_box"><input class="frm_input js_url" type="text" value="{url}" placeholder="选填"></span>
+								<div class="frm_msg fail js_url_error" style="display:none;">链接不合法</div>
+							</div>
+						</div>
+						<div class="frm_control_group">
+							<label class="frm_label" for="">平台名称</label>
+							<div class="frm_controls">
+								<span class="frm_input_box with_counter counter_in append" style="display:none;">
+
+                            <input placeholder="该网站的名称" type="text" class="frm_input js_counter js_platform"> 
+
+                            <em class="frm_input_append frm_counter">0/10</em>
+
+                        </span>
+								<div class="frm_msg fail js_platform_error" style="display:none;">平台名称不能为空且长度不能超过10字</div>
+								<span class="frm_input_box disabled">
+
+                            <input value="微信公众平台" type="text" class="frm_input js_platform" disabled="disabled"> 
+
+                        </span>
+							</div>
+						</div>
+						<div class="frm_control_group">
+							<label class="frm_label" for="">作者</label>
+							<div class="frm_controls">
+								<span class="frm_input_box with_counter counter_in append">
+
+                            <input type="text" class="frm_input js_counter js_author" value="{author}">
+
+                            <em class="frm_input_append frm_counter">0/8</em>
+
+                        </span>
+								<div class="frm_msg fail js_author_error" style="display:none;">作者不能为空且不超过8个字</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/html" id="audioPop">
+			<div class="global_mod qqmusic_box_hd float_layout gap_top" id="searchDiv">
+				<span class="global_info frm_input_box search with_del append">
+
+            <a class="del_btn" href="javascript:" id="searchCloseBt"><i class="icon_search_del"></i>&nbsp;</a>
+
+            <a id="searchBt" href="javascript:" class="frm_input_append"><i class="icon16_common search_gray">搜索</i>&nbsp;</a> 
+
+            <input id="keyInput" type="text" placeholder="歌名/作者" value="" class="frm_input">
+
+        </span>
+				<p class="global_extra gap_top_item tips_global">
+					音乐数据由 <a href="http://cp.music.qq.com" target="_blank">QQ音乐</a> 版权提供 </p>
+			</div>
+			<input type='hidden' id='inputSelectedMusicId' value=''>
+			<div class="qqmusic_box_bd qqmusic_list_container" id="dialog_audio_container"></div>
+		</script>
+		<script type="text/html" id="voteExtra">
+			<div class="frm_control_group extra">
+				<div class="frm_label">选项{vote_index_label}</div>
+				<div class="frm_controls">
+					<span class="frm_input_box"><input type="text" placeholder="十五字以内" class="frm_input" name="option{vote_index + 2}" data-index="{vote_index}" {if vote_input}value="{vote_input}"{/if}></span>
+					<a class="vote_remove_link" onclick="return false;" data-index="{vote_index}" href="javascript:void(0);">删除</a>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/html" id="previewTpl">
+			<div class="simple_dialog_content send_preview">
+				<form class="form" onSubmit="return false;">
+					<div class="frm_control_group">
+						<label class="frm_label">关注公众号后，才能接收图文消息预览</label>
+						<span class="frm_input_box">
+
+                    <input type="text" class="frm_input jsAccountInput" placeholder="请输入微信号/QQ号/手机号"/>
+
+                </span>
+						<p class="frm_msg fail jsAccountFail" style="display:none"></p>
+					</div>
+					{if accounts.length>0}
+					<div class="user_list jsAccountList">
+						{each accounts as o i}
+						<div class="user jsAccount" data-value="{o}">
+							{o}
+							<a href="javascript:;" class="opt jsAccountDel" data-index="{i}">x</a>
+						</div>
+						{/each}
+					</div>
+					{/if}
+				</form>
+			</div>
+		</script>
+
+		<script onerror="wx_loaderror(this)" src="https://res.wx.qq.com/mpres/htmledition/ueditor/editor_config25df2d.js"></script>
+		<script>
+			window.UEDITOR_CONFIG.iframeCssUrl = "https://res.wx.qq.com/mpres/htmledition/ueditor/themes/iframe264f37.css";
+		</script>
+		<script onerror="wx_loaderror(this)" src="https://res.wx.qq.com/mpres/htmledition/ueditor/editor_all_min26be67.js"></script>
+		<script type="text/javascript">
+			wx.cgiData = {};
+			/*    wx.data.jsLogId=18;
+			    wx.data.xhrLogId=19;
+			    wx.data.xhrLogIds=[26,27,28,29];*/
+			(function() {
+				var
+					infos = {
+						"item": []
+					},
+					item = (infos.item && infos.item[0]) || {};
+				wx.cgiData.svr_time = "1436024302" * 1;
+				wx.cgiData.updateTime = item.update_time;
+				wx.cgiData.app_id = "";
+				wx.cgiData.type = "10";
+				//wx.cgiData.isMul = 1*"1";
+				wx.cgiData.isMul = 1;
+				wx.cgiData.appmsg_data = item;
+				wx.cgiData.can_use_vote = 1;
+				wx.cgiData.biz_uin = "MzA4ODAwODI1OA==";
+				wx.cgiData.cardid = "";
+				wx.cgiData.cardnum = "" * 1 || 0;
+				wx.cgiData.can_use_hyperlink = 0;
+				//wx.cgiData.can_use_hyperlink = 1;
+				wx.cgiData.can_use_card = "0" * 1 || 0;
+				wx.cgiData.can_use_copyright = "0" * 1;
+				wx.cgiData.can_use_reward = "0" * 1;
+				wx.cgiData.can_use_shortvideo = "" * 1;
+				wx.cgiData.is_link_white = "0" * 1;
+				wx.cgiData.shortvideo_sn = encodeURIComponent("6TgoWv6TeaZmvqTtw3rVXuCDBUCcEgydM6avpu+cPlI=");
+				wx.cgiData.qqmusic_flag = 1;
+				wx.cgiData.fromview = "" || 'card';
+			})();
+			seajs.use('media/appmsg_edit.js', wx_main);;
+		</script>
+
+	</body>
+
+</html>

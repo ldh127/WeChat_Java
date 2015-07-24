@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			 //上报测速 --初始点
+			window._points = [+new Date()];
+			 //上报测速 --js加载完成点,通过编译工具加在seajs.use回调中
+			function wx_main(mod) {
+				window._points && (window._points[3] = +new Date());
+			};
+		</script>
+		<title>微信公众平台</title>
+		<link href="../img/old/logo.ico" rel="Shortcut Icon">
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/layout_head.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/base.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/lib.css" />
+
+		<link onerror="wx_loaderror(this)" rel="stylesheet" href="../css/mana_file_img.css">
+		
+
+	</head>
+
+	<body class="zh_CN">
+		<div class="head" id="header">
+			<script type="text/javascript">
+				 //上报测速 --css加载完成点
+				window._points && (window._points[1] = +new Date());
+			</script>
+			<div class="head_box">
+				<div class="inner wrp">
+					<h1 class="logo"><a href="/" title="微信公众平台"></a></h1>
+					<div class="account">
+						<div class="account_meta account_info account_meta_primary">
+							<a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN" class="nickname">永远的遗书</a>
+							<span class="type_wrp">
+                                        <a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN" class="type icon_subscribe_label">订阅号</a>
+                                        
+                                        <a href="/merchant/store?action=detail&t=wxverify/detail&info=verify&lang=zh_CN&token=938922762" class="type icon_verify_label fail">未认证</a>
+                                        
+                </span>
+							<a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN">
+								<img src="../img/ourself.jpg" class="avatar">
+							</a>
+						</div>
+						<div id="accountArea" class="account_meta account_inbox account_meta_primary">
+							<a href="/cgi-bin/frame?t=notification/index_frame&lang=zh_CN&token=938922762" class="account_inbox_switch">
+								<i class="icon_inbox">通知</i>&nbsp;
+							</a>
+						</div>
+						<div class="account_meta account_logout account_meta_primary"><a id="logout" href="/cgi-bin/logout?t=wxm-logout&lang=zh_CN&token=938922762">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="body" class="body page_media_list">
+			<div id="js_container_box" class="container_box cell_layout side_l">
+
+				<div class="col_side">
+					<div class="menu_box" id="menuBar">
+						<dl class="menu no_extra">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(../img/icon_menu_function.png) no-repeat;">
+    </i>功能
+            </dt>
+
+							<dd class="menu_item "><a data-id="10005" href="/cgi-bin/masssendpage?t=mass/send&token=938922762&lang=zh_CN">群发功能</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10006" href="/advanced/autoreply?t=ivr/reply&action=beadded&token=938922762&lang=zh_CN">自动回复</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10007" href="/advanced/selfmenu?action=index&t=advanced/menu-setting&token=938922762&lang=zh_CN">自定义菜单</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(../img/icon_menu_management.png) no-repeat;">
+    </i>管理
+            </dt>
+
+							<dd class="menu_item "><a data-id="10012" href="/cgi-bin/message?t=message/list&count=20&day=7&token=938922762&lang=zh_CN">消息管理</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10013" href="/cgi-bin/contactmanage?t=user/index&pageidx=0&type=0&token=938922762&lang=zh_CN">用户管理</a>
+							</dd>
+							<dd class="menu_item selected"><a data-id="10014" href="/cgi-bin/appmsg?begin=0&count=10&t=media/appmsg_list&type=11&action=list&token=938922762&lang=zh_CN">素材管理</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+        <i class="icon_menu" style="background:url(../img/icon_menu_setup.png) no-repeat;">
+    </i>设置
+            </dt>
+
+							<dd class="menu_item "><a data-id="10019" href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN">公众号设置</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10022" href="/cgi-bin/safecenterstatus?action=view&t=setting/safe-index&token=938922762&lang=zh_CN">安全中心</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title clickable">
+        <a href="/advanced/advanced?action=dev&t=advanced/dev&token=938922762&lang=zh_CN">
+        <i class="icon_menu" style="background:url(../img/icon_menu_developer.png) no-repeat;">
+    </i>开发者中心
+    </a>        </dt>
+
+						</dl>
+					</div>
+
+				</div>
+
+				<div class="col_main">
+
+					<div class="main_hd">
+						<h2>素材管理</h2>
+						<div class="title_tab" id="topTab"></div>
+					</div>
+					<div class="main_bd">
+						<div class="img_pick_panel">
+							<div class="inner_container_box side_r cell_layout">
+								<div class="inner_main">
+									<div class="bd">
+										<div class="media_list">
+											<div class="global_mod float_layout">
+												<p class="global_info">
+													<span class="group_name global_info_ele" data-id="" id="js_currentgroup">未分组</span>
+												</p>
+												<div class="global_extra">
+													<div class="bubble_tips bubble_right warn">
+														<div class="bubble_tips_inner">大小: 不超过2M,&nbsp;&nbsp;&nbsp;&nbsp;格式: bmp, png, jpeg, jpg, gif</div>
+														<i class="bubble_tips_arrow out"></i>
+														<i class="bubble_tips_arrow in"></i>
+													</div>
+													<div class="upload_box align_right">
+														<span class="upload_area"><a id="js_upload" class="btn btn_primary" data-gid="">上传</a></span>
+													</div>
+												</div>
+											</div>
+											<div class="oper_group group">
+												<div class="frm_controls oper_ele l">
+													<input id="js_all" type="checkbox" class="frm_checkbox" data-label="全选">
+												</div>
+												<a id="js_batchmove" class="btn btn_default btn_disabled oper_ele l js_popover" href="javascript:;">移动分组</a>
+												<a id="js_batchdel" class="btn btn_default btn_disabled oper_ele l js_popover" href="javascript:;">删除</a>
+											</div>
+											<div class="group img_pick" id="js_imglist"></div>
+											<div class="pagination_wrp pageNavigator" id="js_pagebar"></div>
+										</div>
+									</div>
+								</div>
+								<div class="inner_side">
+									<div class="bd">
+										<div class="group_list">
+											<div class="inner_menu_box" id="js_group"></div>
+											<div class="inner_menu_item">
+												<a href="javascript:;" class="inner_menu_link js_popover" id="js_creategroup"><i class="icon14_common add_gray">新建分组</i>新建分组</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<script type="text/html" id="tpl_list">
+						{if list.length
+						<=0 } <div class="empty_tips">该分组暂时没有图片素材</div>
+				{else}
+				<ul class="group">
+					{each list as item}
+					<li class="img_item js_imgitem" data-id="{item.file_id}">
+						<div class="img_item_bd">
+							<img class="pic wxmImg Zoomin" src="{item.img_src}" data-previewsrc="{item.imgsrc}" data-id="{item.file_id}" />
+							<span class="check_content">
+					<input type="checkbox" class="frm_checkbox" data-label="{item.name}" data-id="{item.file_id}">
+				</span>
+						</div>
+						<div class="msg_card_ft">
+							<ul class="grid_line msg_card_opr_list">
+								<li class="grid_item size1of3 msg_card_opr_item">
+									<a class="js_edit js_tooltip js_popover" data-id="{item.file_id}" data-name="{item.name}" href="javascript:;" data-tooltip="编辑名称">
+										<span class="msg_card_opr_item_inner">
+								<i class="icon18_common edit_gray">编辑</i>
+							</span>
+										<span class="vm_box"></span>
+									</a>
+								</li>
+								<li class="grid_item size1of3 msg_card_opr_item">
+									<a class="js_move js_tooltip js_popover" href="javascript:;" data-id="{item.file_id}" data-tooltip="移动分组">
+										<span class="msg_card_opr_item_inner">
+								<i class="icon18_common move_gray">移动分组</i>
+							</span>
+										<span class="vm_box"></span>
+									</a>
+								</li>
+								<li class="grid_item size1of3 no_extra msg_card_opr_item">
+									<a class="js_del js_tooltip js_popover" data-id="{item.file_id}" href="javascript:;" data-tooltip="删除">
+										<span class="msg_card_opr_item_inner">
+								<i class="icon18_common del_gray">删除</i>
+							</span>
+										<span class="vm_box"></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					{/each}
+				</ul>
+				{/if}
+				</script>
+
+				<script type="text/html" id="tpl_group">
+					<dl class="inner_menu">
+
+						{each list as item}
+						<dd class="inner_menu_item{if item.selected} selected{/if} js_groupitem" data-id="{item.id}">
+							<a href="/cgi-bin/filepage?type=2&begin=0&count=12&group_id={item.id}&t=media/img_list&token=938922762&lang=zh_CN" class="inner_menu_link" title="{item.name}">
+								<strong>{item.name}</strong><em class="num">({item.count})</em>
+							</a>
+						</dd>
+						{/each}
+					</dl>
+				</script>
+
+				<script type="text/html" id="tpl_edit">
+					<div class="popover_edit">
+						<label for="" class="frm_label">编辑名称</label>
+						<div class="frm_controls">
+							<span class="frm_input_box">
+			<input type="text" class="frm_input js_name" value="{name}" data-id="{id}">
+		</span>
+							<p class="frm_tips"></p>
+							<p class="frm_msg fail">
+								<span class="frm_msg_content">填错了！！！！</span>
+							</p>
+						</div>
+					</div>
+				</script>
+
+				<script type="text/html" id="tpl_create">
+					<div class="popover_edit">
+						<label for="" class="frm_label">创建分组</label>
+						<div class="frm_controls">
+							<span class="frm_input_box">
+			<input type="text" class="frm_input js_name" value="">
+		</span>
+							<p class="frm_tips"></p>
+							<p class="frm_msg fail">
+								<span class="frm_msg_content">填错了！！！！</span>
+							</p>
+						</div>
+					</div>
+				</script>
+
+				<script type="text/html" id="tpl_del">
+					<p class="tl">确定删除此素材吗？</p>
+				</script>
+
+				<script type="text/html" id="tpl_move">
+					<div class="frm_control group_select">
+						{each list as item} {if item.id != current}
+						<input type="radio" class="frm_radio" data-id="{item.id}" data-label="{item.name}"> {/if} {/each}
+					</div>
+				</script>
+
+			</div>
+		</div>
+
+		</div>
+		<div class="foot" id="footer">
+			<ul class="links ft">
+				<li class="links_item">
+					<p class="copyright">Copyright &copy; 2012-2015 Tencent. All Rights Reserved.</p>
+				</li>
+			</ul>
+
+		</div>
+		<script type="text/javascript">
+			 //上报测速 --dom加载完成点
+			window._points && (window._points[2] = +new Date());
+		</script>
+
+		<script type="text/javascript">
+			var MODULES = {};
+		</script>
+		<script type="text/javascript">
+			window.wx = {
+				version: "4.0.0",
+				data: {
+					t: "938922762",
+					ticket: "32ad853e32385aa66a7189b1645d21b3161143d5",
+					lang: 'zh_CN',
+					param: ["&token=938922762", '&lang=zh_CN'].join(""),
+					uin: "3088008258",
+					uin_base64: "MzA4ODAwODI1OA==",
+					user_name: "gh_773789eeddab",
+					nick_name: "永远的遗书",
+					time: "1436029289" || new Date().getTime() / 1000
+				},
+				path: {
+					video: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/video-js218877.swf",
+					audio: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/audiojs218877.swf",
+					uploadify: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/uploadify218877.swf",
+					webuploader: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/webuploader230dc3.swf",
+					zoom: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/zoom230dc3.swf",
+					rimgcrop: "https://res.wx.qq.com/mpres/htmledition/images/cut-round218877.gif"
+				},
+				acl: {
+					"msg_acl": {
+						"can_text_msg": 1,
+						"can_image_msg": 1,
+						"can_voice_msg": 1,
+						"can_video_msg": 1,
+						"can_app_msg": 1,
+						"can_commodity_app_msg": 0,
+						"can_card_msg": "0" * 1 || 0, // @cunjinli改掉
+						"can_use_shortvideo": "0" * 1
+					},
+					"ivr_acl": {
+						"can_text_msg": 1,
+						"can_image_msg": 1,
+						"can_voice_msg": 1,
+						"can_video_msg": 1,
+						"can_app_msg": 1,
+						"can_commodity_app_msg": 0
+					},
+					"merchant_acl": {
+						"can_use_pay_tmpl": "" * 1,
+						"can_use_account_manage": "" * 1
+					},
+					"ad_system": {
+						"can_use_sp": "" * 1
+					}
+				},
+				events: {} //全局的事件绑定
+			};
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/sea.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/lib.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/wx.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../miss/json218878.js"></script>
+		<script type="text/javascript" src="../miss/store21a6f0.js"></script>
+		<script type="text/javascript" src="../miss/webuploader234186.js"></script>
+		
+
+		<script type="text/javascript">
+			define('widget/upload.css', [], function() {
+				return null;
+			});
+			define('widget/img_preview.css', [], function() {
+				return null;
+			});
+			define('widget/pagination.css', [], function() {
+				return null;
+			});
+			define('widget/tooltip.css', [], function() {
+				return null;
+			});
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../jav/mana_file_img.js"></script>
+		<script type="text/javascript">
+			wx.data.jsLogId = 20;
+			wx.data.xhrLogId = 21;
+			wx.cgiData = {
+				page: {
+					"type": 2,
+					"file_cnt": {
+						"total": 5,
+						"img_cnt": 4,
+						"voice_cnt": 0,
+						"video_cnt": 0,
+						"app_msg_cnt": 1,
+						"commondity_msg_cnt": 0,
+						"video_msg_cnt": 0,
+						"short_video_cnt": 0,
+						"app_msg_sent_cnt": 0
+					},
+					"file_item": [{
+						"file_id": 206686196,
+						"name": "2011101415400232475.jpg",
+						"type": 2,
+						"size": "326.9\tK",
+						"update_time": 1436023446,
+						"cdn_url": "https:\/\/mmbiz.qlogo.cn\/mmbiz\/RxSTyJ8ruYBfKWWkMRpnUKlfwYicKO8LvY3zHiatxkMRlxrlchGNiaO7ficklxW3sXpE0b1uNA6iau6WeAudubBnxPw\/0?wx_fmt=jpeg",
+						"img_format": "jpeg",
+						"video_cdn_id": "",
+						"video_thumb_cdn_url": ""
+					}, {
+						"file_id": 206686169,
+						"name": "9J7583JIB5G6.jpg",
+						"type": 2,
+						"size": "121.0\tK",
+						"update_time": 1436023415,
+						"cdn_url": "https:\/\/mmbiz.qlogo.cn\/mmbiz\/RxSTyJ8ruYBfKWWkMRpnUKlfwYicKO8LvgUib5yPxqtIOTDzpppl2iaf7ewVGZ2aNAC1FdPPwoS2iarDaicgRNr8Y8g\/0?wx_fmt=jpeg",
+						"img_format": "jpeg",
+						"video_cdn_id": "",
+						"video_thumb_cdn_url": ""
+					}, {
+						"file_id": 206686057,
+						"name": "163912zznig0go8dlp0p89.jpg",
+						"type": 2,
+						"size": "1.1\tM",
+						"update_time": 1436023229,
+						"cdn_url": "https:\/\/mmbiz.qlogo.cn\/mmbiz\/RxSTyJ8ruYBfKWWkMRpnUKlfwYicKO8LvPlADAqjVzpv3uH2stObXgyS63XOxvgicJFeLqxt0oVIwWlDibicxibSX7Q\/0?wx_fmt=jpeg",
+						"img_format": "jpeg",
+						"video_cdn_id": "",
+						"video_thumb_cdn_url": ""
+					}, {
+						"file_id": 206686050,
+						"name": "bg_login_banner.jpg",
+						"type": 2,
+						"size": "165.1\tK",
+						"update_time": 1436023202,
+						"cdn_url": "https:\/\/mmbiz.qlogo.cn\/mmbiz\/RxSTyJ8ruYBfKWWkMRpnUKlfwYicKO8LvLweDG43cQazM4h1a3pPDgibOMNrem46rYgkDs7MLBl287BnhJOPWbCA\/0?wx_fmt=jpeg",
+						"img_format": "jpeg",
+						"video_cdn_id": "",
+						"video_thumb_cdn_url": ""
+					}],
+					"file_group_list": {
+						"biz_uin": 3088008258,
+						"file_group": [{
+							"id": 1,
+							"name": "未分组",
+							"files": [],
+							"count": 4
+						}]
+					}
+				},
+				fakeid: 3088008258,
+				groupid: "" * 1 || 1,
+				begin: "0" * 1,
+				count: "12" * 1
+			};
+			seajs.use('media/img_list', wx_main);;
+		</script>
+
+		<script type="text/html" id="js_faqscene_tpl">
+			<div class="faqscene" id="js_faqscene_p">
+				<div class="faqscene_inner">
+					<div class="faqscene_name js_faq_trigger">常见问题</div>
+					<div class="faqscene_panel js_faq_main_panel">
+						<a href="###" class="faqscene_close">x</a>
+						<div class="faqscene_hd">{data.question}</div>
+						<div class="faqscene_bd">
+							<div class="faqscene_tabs">
+								<div class="faqscene_tab_hd">
+									<ul class="js_faq_class1">
+										{if data.guide_list.length>2} {each data.guide_list as guide i} {if guide}
+										<li data-report-id="{guide.report_id}"><a {if i==0}class="active" {/if} href="javascript:;">{guide.itemname}</a>
+										</li>
+										{/if} {/each} {/if}
+									</ul>
+								</div>
+								{if data.guide_list.length>1} {/if} {each data.guide_list as guide i} {if guide}
+								<div class="faqscene_tab_bd js_faqscene_content">
+									<ul>
+										{each guide.subitems as subitem i} {if subitem}
+										<li><a target="_blank" href="{subitem.kf_url}">{subitem.title}</a>
+										</li>
+										{/if} {/each}
+									</ul>
+								</div>
+								{/if} {/each}
+							</div>
+						</div>
+						<div class="faqscene_ft"><a href="{data.more_help.kf_url}" target="_blank">{data.more_help.title}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/javascript">
+			;;;
+			(function() {
+				var jq = jQuery;
+				var dom = null;
+				var panel = null;
+				var close = null
+				var faqArea = null;
+				var timer = null;
+				var tab_heads = null;
+				var tab_contents = null;
+				var token = "938922762"
+				var report_id = null;
+				/**
+				 * 加载FAQ数据以及进行初始化
+				 */
+				function loadDataAndInit() {
+					var param = "&cginame=" + urlParser.parser.pathname.replace(/^\//, '');
+					var tValue = urlParser.getParam("t");
+					var actionValue = urlParser.getParam("action");
+					param += token ? ("&token=" + token) // 带上token
+						: "";
+					param += tValue ? ("&t=" + tValue) : ("&action=" + actionValue);
+					var getFAQUrl = "/misc/faq?action=getfaq&lang=zh_CN&f=json" + param;
+					$.ajax({
+						type: "GET",
+						url: getFAQUrl,
+					}).success(function(data) {
+						if (data.base_resp.ret !== 0) return;
+						wx.faq_list = data.base_resp.assistant.problem;
+						if (!wx.faq_list.question) return; // 做保护，防止没有吐出
+						renderFaq();
+						makeActions();
+						initReport();
+						panel.hide();
+						goto(0);
+					}).error(function(error) {; // ignore
+					});
+				}
+
+				function renderFaq() {
+						jq("body").append(template.render("js_faqscene_tpl", {
+							data: wx.faq_list
+						}));
+						dom = jq("#js_faqscene_p");
+						panel = dom.find(".js_faq_main_panel");
+						close = dom.find(".faqscene_close");
+						faqArea = dom.find(".faqscene_inner");
+						timer = null;
+						tab_heads = dom.find(".js_faq_class1 li");
+						tab_contents = dom.find(".js_faqscene_content");
+					}
+					/**
+					 * 点击某个字分类显示该子分类的问题列表
+					 *
+					 * @param {Number} idx - 该子分类的下标
+					 */
+
+				function goto(idx) {
+					var $currentTab = tab_heads.eq(idx);
+					tab_contents.hide();
+					subitem = $currentTab.find("a").text();
+					report_id = (idx === 0) ? wx.faq_list.guide_list[0].report_id : $currentTab.data("report-id");
+					jq(tab_contents[idx]).show();
+					tab_heads.find("a").removeClass("active");
+					jq(tab_heads[idx]).find("a").addClass("active");
+				}
+
+				function makeActions() {
+						tab_heads.click(function() {
+							var idx = jq(this).index();
+							goto(idx);
+						});
+						// 点击x隐藏FAQ
+						close.on("click", function(event) {
+							event.preventDefault();
+							clearTimeout(timer);
+							panel.hide();
+						});
+						// 鼠标移出FAQ隐藏
+						faqArea.on("mouseover", function() {
+							clearTimeout(timer);
+							panel.show();
+						});
+						faqArea.on("mouseout", function(event) {
+							timer = setTimeout(function() {
+								panel.hide();
+							}, 300);
+						});
+					}
+					/*======================== 用户点击，上报数据统计 =======================*/
+				var subitem = null;
+				var questText = "none";
+				var questLink = "none";
+				var urlParser = new URLParser(window.location.href);
+
+				function initReport() {
+						subitem = wx.faq_list.guide_list[0].itemname;
+						report_id = wx.faq_list.guide_list[0].report_id;
+						// 上报每个独立的问题
+						jq("div.js_faqscene_content").find("a").click(function(event) {
+							var $question = jq(this);
+							questText = $question.text();
+							questLink = $question.attr("href");
+							var reportData = getReportData();
+							report(reportData);
+						});
+						// 上报更多问题链接的点击
+						jq("div.faqscene_ft a").click(function(event) {
+							var $more = jq(this);
+							questText = $more.text();
+							var reportData = getReportData();
+							reportData.report_id = wx.faq_list.help_report_id;
+							report(reportData);
+						});
+					}
+					/**
+					 * ajax上报点击统计数据
+					 *
+					 * @param {Object} data - 统计数据
+					 */
+
+				function report(data) {
+						//console.log(data);
+						var reportUrl = "/misc/faq?action=report"
+						$.ajax({
+							url: reportUrl,
+							data: data,
+							type: "POST"
+						}).success(function(data) {
+							//console.log(data);
+						});
+					}
+					/**
+					 * 获取需要上报的数据
+					 *
+					 * @return {Object} 需要上报的数据
+					 */
+
+				function getReportData() {
+						var data = {};
+						data.report_id = report_id;
+						data.question = questText;
+						data.action = "report";
+						return data;
+					}
+					/**
+					 * URL分析器
+					 *
+					 * @param {String} url - 需要传入的URL
+					 * @constructor
+					 */
+
+				function URLParser(url) {
+						// Check out this gist for URL parser hack: 
+						// https://gist.github.com/jlong/2428561
+						var $el = jq("<a></a>").attr("href", url);
+						this.el = $el.get(0);
+						this.parser = this.el;
+					}
+					/**
+					 * 获取URL中的请求特定的请求参数
+					 *
+					 * @param {String} key - 需要查询的参数的键
+					 * @return {String|Null} - 返回值，不存在则为null
+					 */
+				URLParser.prototype.getParam = function(key) {
+					var KEY_REG = new RegExp("([\?&])" + key + "=([^&#]*)([&#])?");
+					var result = this.el.search.match(KEY_REG);
+					return result ? result[2] : null;
+				};
+				loadDataAndInit();
+			})();
+		</script>
+
+	</body>
+
+</html>

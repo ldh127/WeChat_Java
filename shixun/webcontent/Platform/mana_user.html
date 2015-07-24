@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			 //上报测速 --初始点
+			window._points = [+new Date()];
+			 //上报测速 --js加载完成点,通过编译工具加在seajs.use回调中
+			function wx_main(mod) {
+				window._points && (window._points[3] = +new Date());
+			};
+		</script>
+		<title>微信公众平台</title>
+		<link href="../img/logo.ico" rel="Shortcut Icon">
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/layout_head.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/base.css" />
+		<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="../css/lib.css" />
+		<link rel="stylesheet" href="../css/mana_user.css" />
+
+	</head>
+
+	<body class="zh_CN">
+		<div class="head" id="header">
+			<script type="text/javascript">
+				 //上报测速 --css加载完成点
+				window._points && (window._points[1] = +new Date());
+			</script>
+			<div class="head_box">
+				<div class="inner wrp">
+					<h1 class="logo"><a href="/" title="微信公众平台"></a></h1>
+					<div class="account">
+						<div class="account_meta account_info account_meta_primary">
+							<a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN" class="nickname">永远的遗书</a>
+							<span class="type_wrp">
+
+                                        <a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN" class="type icon_subscribe_label">订阅号</a>
+
+                                        
+
+                                        <a href="/merchant/store?action=detail&t=wxverify/detail&info=verify&lang=zh_CN&token=938922762" class="type icon_verify_label fail">未认证</a>
+
+                                        
+
+                </span>
+							<a href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN">
+								<img src="../img/ourself.jpg" class="avatar">
+							</a>
+						</div>
+						<div id="accountArea" class="account_meta account_inbox account_meta_primary">
+							<a href="/cgi-bin/frame?t=notification/index_frame&lang=zh_CN&token=938922762" class="account_inbox_switch">
+								<i class="icon_inbox">通知</i>&nbsp;
+							</a>
+						</div>
+						<div class="account_meta account_logout account_meta_primary"><a id="logout" href="/cgi-bin/logout?t=wxm-logout&lang=zh_CN&token=938922762">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="body" class="body page_user">
+			<div id="js_container_box" class="container_box cell_layout side_l">
+
+				<div class="col_side">
+					<div class="menu_box" id="menuBar">
+						<dl class="menu no_extra">
+							<dt class="menu_title">
+
+        <i class="icon_menu" style="background:url(../img/icon_menu_function.png) no-repeat;">
+
+    </i>功能
+
+            </dt>
+
+							<dd class="menu_item "><a data-id="10005" href="/cgi-bin/masssendpage?t=mass/send&token=938922762&lang=zh_CN">群发功能</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10006" href="/advanced/autoreply?t=ivr/reply&action=beadded&token=938922762&lang=zh_CN">自动回复</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10007" href="/advanced/selfmenu?action=index&t=advanced/menu-setting&token=938922762&lang=zh_CN">自定义菜单</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+
+        <i class="icon_menu" style="background:url(../img/icon_menu_management.png) no-repeat;">
+
+    </i>管理
+
+            </dt>
+
+							<dd class="menu_item "><a data-id="10012" href="/cgi-bin/message?t=message/list&count=20&day=7&token=938922762&lang=zh_CN">消息管理</a>
+							</dd>
+							<dd class="menu_item selected"><a data-id="10013" href="/cgi-bin/contactmanage?t=user/index&pageidx=0&type=0&token=938922762&lang=zh_CN">用户管理</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10014" href="/cgi-bin/appmsg?begin=0&count=10&t=media/appmsg_list&type=11&action=list&token=938922762&lang=zh_CN">素材管理</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title">
+
+        <i class="icon_menu" style="background:url(../img/icon_menu_setup.png) no-repeat;">
+
+    </i>设置
+
+            </dt>
+
+							<dd class="menu_item "><a data-id="10019" href="/cgi-bin/settingpage?t=setting/index&action=index&token=938922762&lang=zh_CN">公众号设置</a>
+							</dd>
+							<dd class="menu_item "><a data-id="10022" href="/cgi-bin/safecenterstatus?action=view&t=setting/safe-index&token=938922762&lang=zh_CN">安全中心</a>
+							</dd>
+						</dl>
+						<dl class="menu ">
+							<dt class="menu_title clickable">
+
+        <a href="/advanced/advanced?action=dev&t=advanced/dev&token=938922762&lang=zh_CN">
+
+        <i class="icon_menu" style="background:url(../img/icon_menu_developer.png) no-repeat;">
+
+    </i>开发者中心
+
+    </a>        </dt>
+
+						</dl>
+					</div>
+
+				</div>
+
+				<div class="col_main">
+
+					<div class="main_hd">
+						<h2>用户管理</h2>
+						<div class="title_tab" id="topTab"></div>
+					</div>
+					<div class="main_bd">
+
+						<div class="search_bar" id="searchBar">
+
+						</div>
+
+						<div class="mod_hd">
+							<div class="mod_info">
+								分组名称 <span class="group_name" id="js_groupName"></span>
+							</div>
+							<div class="mod_opr">
+								<a href="javascript:;" data-y="3" class="btn btn_primary" id="js_groupAdd"><i class="icon14_common add_white"></i>新建分组</a>
+							</div>
+						</div>
+						<div class="inner_container_box side_r cell_layout ">
+							<div class="inner_main">
+								<div class="bd">
+
+									<div class="table_wrp user_list">
+										<table class="table" cellspacing="0">
+											<thead class="thead">
+												<tr>
+													<th class="table_cell user no_extra" colspan="3">
+														<div class="group_select">
+															<label for="selectAll" class="group_select_label frm_checkbox_label">
+																<i class="icon_checkbox"></i>
+																<input type="checkbox" class="frm_checkbox" id="selectAll"> 全选 </label>&nbsp;
+															<div id="allGroup" class="dropdown_wrp"></div>
+														</div>
+													</th>
+												</tr>
+											</thead>
+											<tbody class="tbody" id="userGroups"></tbody>
+										</table>
+									</div>
+									<div class="tool_area">
+										<div class="pagination_wrp js_pageNavigator"></div>
+									</div>
+								</div>
+							</div>
+							<div class="inner_side">
+								<div class="bd">
+									<div class="group_list">
+										<div class="inner_menu_box" id="groupsList"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="foot" id="footer">
+			<ul class="links ft">
+				<li class="links_item">
+					<p class="copyright">Copyright &copy; 2012-2015 Tencent. All Rights Reserved.</p>
+				</li>
+			</ul>
+
+		</div>
+		<script type="text/javascript">
+			 //上报测速 --dom加载完成点
+			window._points && (window._points[2] = +new Date());
+		</script>
+
+		<script type="text/javascript">
+			var MODULES = {};
+		</script>
+		<script type="text/javascript">
+			window.wx = {
+				version: "4.0.0",
+				data: {
+					t: "938922762",
+					ticket: "5215d0ca896ec7a2fd27f2c7a3ce696dc1553e1c",
+					lang: 'zh_CN',
+					param: ["&token=938922762", '&lang=zh_CN'].join(""),
+					uin: "3088008258",
+					uin_base64: "MzA4ODAwODI1OA==",
+					user_name: "gh_773789eeddab",
+					nick_name: "永远的遗书",
+					time: "1436022547" || new Date().getTime() / 1000
+				},
+				path: {
+					video: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/video-js218877.swf",
+					audio: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/audiojs218877.swf",
+					uploadify: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/uploadify218877.swf",
+					webuploader: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/webuploader230dc3.swf",
+					zoom: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/zoom230dc3.swf",
+					rimgcrop: "https://res.wx.qq.com/mpres/htmledition/images/cut-round218877.gif"
+				},
+				acl: {
+					"msg_acl": {
+						"can_text_msg": 1,
+						"can_image_msg": 1,
+						"can_voice_msg": 1,
+						"can_video_msg": 1,
+						"can_app_msg": 1,
+						"can_commodity_app_msg": 0,
+						"can_card_msg": "0" * 1 || 0, // @cunjinli改掉
+						"can_use_shortvideo": "0" * 1
+					},
+					"ivr_acl": {
+						"can_text_msg": 1,
+						"can_image_msg": 1,
+						"can_voice_msg": 1,
+						"can_video_msg": 1,
+						"can_app_msg": 1,
+						"can_commodity_app_msg": 0
+					},
+					"merchant_acl": {
+						"can_use_pay_tmpl": "" * 1,
+						"can_use_account_manage": "" * 1
+					},
+					"ad_system": {
+						"can_use_sp": "" * 1
+					}
+				},
+				events: {} //全局的事件绑定
+			};
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/sea.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/lib.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../js/wx.js"></script>
+
+		<script type="text/javascript">
+			define('widget/emoji.css', [], function() {
+				return null;
+			});
+			define('biz_web/widget/dropdown.css', [], function() {
+				return null;
+			});
+			define('widget/rich_buddy.css', [], function() {
+				return null;
+			});
+			define('widget/pagination.css', [], function() {
+				return null;
+			});
+		</script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../jav/mana_user.js"></script>
+		<script onerror="wx_loaderror(this)" type="text/javascript" src="../miss/json218878.js"></script>
+		<script type="text/javascript" src="../miss/store21a6f0.js"></script>
+		<script type="text/javascript" src="../miss/webuploader234186.js"></script>
+		<script type="text/html" id="js_editNameHtml">
+			<h4 class="popover_title">分组名称</h4>
+			<span class="frm_input_box">
+
+        <input type="text" class="frm_input js_name" placeholder="" value="{name}" data-gid="{gid}">
+
+    </span>
+		</script>
+		<script type="text/html" id="js_deleteHtml">
+			删除分组将会把该组已有成员全部移动至未分组里。是否确定删除？
+		</script>
+		<script type="text/javascript">
+			wx.cgiData = {
+				isVerifyOn: "0" * 1,
+				pageIdx: 0,
+				pageCount: 1,
+				pageSize: 20,
+				groupsList: ({
+					"groups": [{
+						"id": 0,
+						"name": "未分组",
+						"cnt": 0
+					}, {
+						"id": 1,
+						"name": "黑名单",
+						"cnt": 0
+					}, {
+						"id": 2,
+						"name": "星标组",
+						"cnt": 1
+					}]
+				}).groups,
+				friendsList: ({
+					"contacts": [{
+						"id": 910245841,
+						"nick_name": "许道龙 🎶",
+						"remark_name": "",
+						"group_id": 2
+					}]
+				}).contacts,
+				currentGroupId: '',
+				type: "0" * 1 || 0,
+				userRole: '25' * 1,
+				verifyMsgCount: '0' * 1,
+				totalCount: '1' * 1
+			};
+			wx.cgiData.key = "".html(false).html(false);
+			seajs.use('user/index', wx_main);;
+		</script>
+
+	</body>
+
+</html>

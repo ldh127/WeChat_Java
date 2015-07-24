@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 配置了系列常量 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.multipart.saveDir" value="/tempdir"></constant>
+	<constant name="struts.multipart.maxSize" value="10485760" />
+	<!--常用包 -->
+	<package name="base" extends="struts-default" />
+
+	<package name="first" extends="base">
+		<action name="valid" class="wechat">
+			<result></result>
+		</action>
+	</package>
+
+	<!-- 登陆与注册 -->
+	<package name="login_xdl" extends="struts-default">
+		<action name="login" class="com.action.wechat.loginAction">
+			<result name="error">register.jsp</result>
+			<result>Platform/main.jsp</result>
+		</action>
+		<!-- 配置regist Action，处理类为LoginRegistAction 指定使用regist方法处理请求 -->
+		<action name="regist" class="com.action.wechat.loginAction"
+			method="regist">
+			<!-- 定义逻辑视图和物理视图之间的映射关系 -->
+			<result>Platform/main.jsp</result>
+		</action>
+		<action name="quit" class="com.action.wechat.loginAction"
+			method="quit">
+			<!-- 定义逻辑视图和物理视图之间的映射关系 -->
+			<result name="success">index.jsp</result>
+		</action>
+
+	</package>
+	<!-- 图片上传 -->
+	<package name="img_xdl" extends="struts-default">
+		<action name="img" class="com.action.wechat.imgAction">
+			<result name="success">/Platform/set_user_info.jsp</result>
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">
+					image/bmp,image/png,image/jpg,image/pjg,image/gif,image/jpeg
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="fileUploadStack"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+	<!--信息管理 -->
+	<package name="info_xdl" extends="struts-default">
+		<action name="info_*" class="infoAction" method="{1}">
+			<result name="success">/Platform/set_user_info.jsp</result>
+			<!-- <result name="submit">/test.jsp</result> -->
+			<result name="update_ok" type="redirect">
+				<param name="location">info_set_page.action</param>
+			</result>
+		</action>
+	</package>
+	<!-- 群发aciton -->
+
+	<!--信息管理 -->
+	<package name="allsend_xdl" extends="struts-default">
+		<action name="allsend" class="com.action.wechat.allsendAction">
+			<!-- <result name="success">/Platform/funtion_send_all.jsp</result> -->
+			<result name="success">/send_all_state.jsp</result>
+		</action>
+	</package>
+	<!-- 关键词设置 -->
+	<package name="set_key" extends="base">
+		<action name="key_*" class="setKey" method="{1}">
+			<result name="success">/Platform/auto_key_reply.jsp</result>
+			<result name="welcome">/Platform/auto_welcome.jsp</result>
+			<result name="take"></result>
+		</action>
+	</package>
+	<!--用户管理 -->
+	<package name="mana_user_xdl" extends="struts-default">
+		<action name="mana_user" class="com.action.wechat.mana_userAction">
+			<result name="success">/Platform/mana_user.jsp</result>
+		</action>
+	</package>
+
+	<package name="set_menu" extends="base">
+		<action name="menu_*" class="setMenu" method="{1}">
+			<result>/Platform/define_menu.jsp</result>
+		</action>
+	</package>
+	
+	<!--信息管理 -->
+	<package name="mana_mess_xdl" extends="struts-default">
+		<action name="mana_mess" class="com.action.wechat.mana_messAction">
+			<result name="success">/Platform/mana_mess.jsp</result>
+		</action>
+	</package>
+	
+	<!--信息回复 -->
+	<package name="mess_reply_xdl" extends="struts-default">
+		<action name="mess_reply" class="com.action.wechat.mess_replyAction">
+			<result name="success">/Platform/mana_mess.jsp</result>
+		</action>
+	</package>
+	
+</struts>
